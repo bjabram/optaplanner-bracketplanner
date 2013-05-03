@@ -1,0 +1,94 @@
+package com.redhat.rhc.marchmadness.solver;
+
+dialect "mvel"
+    
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+
+import bracketplanner.domain.Bracket;
+import bracketplanner.domain.Seeding;
+import bracketplanner.domain.Site;
+import bracketplanner.domain.Team;
+
+global HardSoftScoreHolder scoreHolder;
+
+// ############################################################################
+// Hard Rules
+// These must be satisfied to ensure a conforming bracket
+// ############################################################################
+
+rule "Team used more than once"
+when
+	// Check two seedings with same team - no nulls
+	$team: Team()
+	$seedingA: Seeding(team == $team)
+	$seedingB: Seeding(team == $team, this != $seedingA)
+then
+    scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "Pod sites for same pod number"
+when
+	$podSiteA: Site()
+	$podSiteB: Site(this != $podSiteA)
+	$seedingA: Seeding($pod: pod, podSite == $podSiteA)
+	$seedingB: Seeding(pod == $pod, podSite == $podSiteB)
+then
+    scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "Team cannot play at own host site"
+when
+	$team: Team($name: name)
+	$podSite: Site(hostTeamName == $name)
+	$seeding: Seeding(team == $team, podSite == $podSite)
+then
+    scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+
+rule "Team cannot play at own regional site"
+when
+	$team: Team($name: name)
+	$seeding: Seeding(team == $team, regionalSite.hostTeamName == $name)
+then
+    scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+	
+rule "Teams in same conference cannot play in first round"
+when
+	$teamA: Team($conference: conference)
+	$teamB: Team(conference == $conference, this != $teamA)
+	$seedingA: Seeding(team == $teamA, $seedA: seed, $site: podSite)
+	$seedingB: Seeding(team == $teamB, seed == 17 - $seedA, podSite == $site)
+then
+    scoreHolder.addHardConstraintMatch(kcontext, -1);
+end
+	
+
+// ############################################################################
+// Soft scores
+// ############################################################################
+
+rule "Team distance from expected seed"
+when
+	$team : Team($expectedSeed: expectedSeed)
+	$seeding : Seeding(team == $team, $actualSeed: seed)
+then
+    scoreHolder.addSoftConstraintMatch(kcontext, -1000 * ($expectedSeed - $actualSeed) * ($expectedSeed - $actualSeed));
+end
+
+rule "Team distance from pod site"
+when
+	$team: Team()
+	$podSite: Site()
+	$seeding: Seeding(team == $team, podSite == $podSite, $distance: distanceToPodSite)
+then
+    scoreHolder.addSoftConstraintMatch(kcontext, -1 * $distance);
+end
+
+rule "Team distance from regional site"
+when
+	$team: Team()
+	$seeding: Seeding(team == $team, $seed: seed, $regionalSite: regionalSite, $distance: distanceToRegionalSite)
+then
+    scoreHolder.addSoftConstraintMatch(kcontext, -2 * $distance);
+end

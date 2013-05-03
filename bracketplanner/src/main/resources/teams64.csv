@@ -1,0 +1,65 @@
+Rank,Name,City,Conference,RPI,Latitude,Longitude
+1,Louisville,"Louisville, KY",Big East,0.661,38.25486,-85.766404
+2,Kansas,"Lawrence, KS",Big 12,0.648,38.973065,-95.236534
+3,Indiana,"Bloomington, IN",Big 10,0.639,39.16659,-86.534244
+4,Gonzaga,"Spokane, WA",MWC,0.641,47.65726,-117.412279
+5,Miami (FL),"Miami, FL",ACC,0.652,25.728985,-80.237419
+6,Duke,"Durham, NC",ACC,0.677,35.995275,-78.896014
+7,Georgetown,"Washington, DC",Big East,0.627,38.89037,-77.031959
+8,Ohio State,"Columbus, OH",Big 10,0.645,39.96196,-83.002984
+9,New Mexico,"Albuquerque, NM",MWC,0.657,35.08418,-106.648639
+10,Florida,"Gainesville, FL",SEC,0.639,29.65195,-82.323184
+11,Michigan St,"Lansing, MI",Big 10,0.647,42.73194,-84.552249
+12,Marquette,"Milwaukee, WI",Big East,0.641,43.04181,-87.906844
+13,Michigan,"Ann Arbor, MI",Big 10,0.627,42.281875,-83.748479
+14,Kansas St,"Manhattan, KS",Big 12,0.612,39.17881,-96.561834
+15,Saint Louis,"St. Louis, MO",A10,0.618,38.62774,-90.199514
+16,Syracuse,"Syracuse, NY",Big East,0.637,43.04999,-76.147389
+17,Oklahoma St,"Stillwater, OK",Big 12,0.602,36.11625,-97.058654
+18,UNLV,"Las Vegas, NV",WAC,0.605,36.171915,-115.139974
+19,Wisconsin,"Madison, WI",Big 10,0.602,43.07295,-89.386694
+20,VCU,"Richmond, VA",Colonial,0.609,37.5407,-77.433654
+21,Arizona,"Tuscos, AZ",Pac 12,0.626,34.167874,-111.930706
+22,Butler,"Indianapolis, IN",A10,0.614,39.76691,-86.149964
+23,Memphis,"Memphis, TN",C-USA,0.63,35.149766,-90.049259
+24,UCLA,"Los Angeles, CA",Pac 12,0.6,34.05349,-118.245319
+25,Creighton,"Creighton, NE",MVC,0.613,42.466535,-97.905559
+26,San Diego St,"San Diego, CA",MWC,0.598,32.715695,-117.161719
+27,Notre Dame,"South Bend, IN",Big East,0.591,41.679058,-86.254044
+28,Illinois,"Urbana, IL",Big 10,0.597,40.11727,-88.204489
+29,N Carolina,"Chapel Hill, NC",ACC,0.618,35.914771,-79.056701
+30,Colorado St,"Fort Collins, CO",MWC,0.612,40.58147,-105.076259
+31,Pittsburgh,"Pittsburgh, PA",Big East,0.588,40.438335,-79.997459
+32,NC State,"Raleigh, NC",ACC,0.597,35.78551,-78.642669
+33,Missouri,"Columbia, MO",SEC,0.591,38.952174,-92.334157
+34,Temple,"Philadelphia, PA",A10,0.592,40.16508,-75.19177
+35,Wichita St,"Wichita, KS",MVC,0.615,37.68698,-97.335579
+36,Colorado,"Boulder, CO",Pac 12,0.589,40.01574,-105.279239
+37,Cincinnati,"Cincinnati, OH",Big East,0.581,39.106614,-84.504552
+38,Villanova,"Philadelphia, PA",Big East,0.592,40.0351,-75.3398
+39,Iowa State,"Ames, IA",Big 10,0.592,42.025345,-93.620199
+40,Oklahoma,"Norman, OK",Big 12,0.586,35.22076,-97.446599
+41,Minnesota,"Minneapolis, MN",Big 10,0.603,44.979035,-93.264929
+42,California,"Berkeley, CA",Pac 12,0.579,37.869885,-122.270539
+43,Oregon,"Eugene, OR",Pac 12,0.598,44.04992,-123.088544
+44,Belmont,"Nashville, TN",OVC,0.61,36.167783,-86.778365
+46,St Marys,"Moraga, California",MWC,0.61,37.853475,-122.127284
+47,Ole Miss,"University, MS",SEC,0.587,34.36997,-89.530204
+48,Bucknell,"Lewisburg, PA",Patroid,0.577,40.96113,-76.890639
+49,La Salle,"Philadelphia, PA",A10,0.601,40.03917,-75.15516
+51,Akron,"Akron, OH",MAC,0.584,41.084195,-81.514059
+52,New Mexico St.,"Las Cruces, NM",WAC,0.57,32.3069,-106.777849
+53,South Dakota St,"Vermillion, SD",Summit,0.556,42.786685,-96.928029
+54,Montana,"Missoula, MT",Big Sky,0.559,46.87278,-113.996234
+55,Davidson,"Davidson, NC",Southern,0.56,35.497861,-80.849242
+56,Valparaiso,"Valparaiso, IN",Horizon,0.567,41.467756,-87.061629
+57,Northwestern St,"Natchitoches, LA",Southland,0.55,31.760955,-93.086984
+58,Harvard,"Cambridge, MA",Ivy,0.551,42.36679,-71.106019
+59,FGCU,"Fort Meyers, FL",Atlantic Sun,0.557,26.640845,-81.868194
+60,Pacific,"Forest Grove, OR",Big West,0.537,45.519015,-123.111169
+61,Iona,"New Rochelle, NY",MAAC,0.537,40.919705,-73.786804
+62,Albany (NY),"Albany, NY",America East,0.518,42.651445,-73.755254
+63,Western Ky.,"Bowling Green, KY",Sun Belt,0.51,36.994625,-86.445584
+64,Southern U.,"Baton Rouge, LA",SWAC,0.496,30.443345,-91.186994
+66,James Madison,"Harrisonburg, VA",Colonial,0.499,38.451534,-78.869047
+67,NC A&T,"Greensboro, NC",MEAC,0.473,36.068994,-79.794704
