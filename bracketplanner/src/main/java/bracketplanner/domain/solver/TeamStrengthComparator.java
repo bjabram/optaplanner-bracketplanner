@@ -6,13 +6,13 @@ import java.util.Comparator;
 import org.apache.commons.lang.builder.CompareToBuilder;
 
 import bracketplanner.domain.Team;
-import bracketplanner.util.MarchMadnessUtil;
+import bracketplanner.util.BracketPlannerUtil;
 
 
 public class TeamStrengthComparator implements Comparator<Team>, Serializable {
 
     private static final long serialVersionUID = 3780427313653817465L;
-    private static final int MEDIAN_RANK = MarchMadnessUtil.NUM_TEAMS / 2;
+    private static final int MEDIAN_RANK = BracketPlannerUtil.NUM_TEAMS / 2;
 
     public int compare(Team team1, Team team2) {
         // Use basic ranking order

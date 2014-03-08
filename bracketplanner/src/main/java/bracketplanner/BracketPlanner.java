@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import bracketplanner.domain.Bracket;
 import bracketplanner.persistence.BracketGenerator;
 
-
 /**
  * 
  * http://stevemorse.org/jcal/latlonbatch.html
@@ -18,20 +17,20 @@ import bracketplanner.persistence.BracketGenerator;
  * 
  */
 public class BracketPlanner {
-    public static void main(String[] args) {
-        final Logger log = LoggerFactory.getLogger(BracketPlanner.class);
+	public static void main(String[] args) {
+		final Logger log = LoggerFactory.getLogger(BracketPlanner.class);
 
-        SolverFactory solverFactory = new XmlSolverFactory("/bracketplannerSolverConfig.xml");
-        Solver solver = solverFactory.buildSolver();
+		SolverFactory solverFactory = new XmlSolverFactory("/bracketplannerSolverConfig.xml");
+		Solver solver = solverFactory.buildSolver();
 
-        Bracket unsolvedBracket = BracketGenerator.generateBracket();
+		Bracket unsolvedBracket = BracketGenerator.generateBracket();
 
-        solver.setPlanningProblem(unsolvedBracket);
-        solver.solve();
+		solver.setPlanningProblem(unsolvedBracket);
+		solver.solve();
 
-        Bracket solvedBracket = (Bracket) solver.getBestSolution();
+		Bracket solvedBracket = (Bracket) solver.getBestSolution();
 
-        log.info(solvedBracket.toString());
+		log.info(solvedBracket.toString());
 
-    }
+	}
 }

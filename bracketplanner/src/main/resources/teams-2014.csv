@@ -1,0 +1,352 @@
+leagueId,leagueName,leagueAbbreviation,teamId,teamName,teamAbbreviation,venueId,venueName,venueCity,venueState,latitude,longitude
+1,America East Conference,aeast,42,Hartford,HART,1929,Chase Family Arena,West Hartford,Connecticut,41.7620447,-72.7420399
+1,America East Conference,aeast,160,New Hampshire,UNH,1936,Lundholm Gym,Durham,New Hampshire,43.1340949,-70.9265127
+1,America East Conference,aeast,261,Vermont,UVM,2118,Roy L Patrick Gymnasium,Burlington,Vermont,44.4723989,-73.2114941
+1,America East Conference,aeast,311,Maine,MAINE,4605,Cross Insurance Center,Bangor,Maine,44.8011821,-68.7778138
+1,America East Conference,aeast,399,Albany,ALBY,1976,SEFCU Arena,Guilderland,New York,42.704522,-73.911513
+1,America East Conference,aeast,2066,Binghamton,BING,,,Binghampton,New York,42.0986867,-75.9179738
+1,America East Conference,aeast,2349,Massachusetts Lowell,UML,,,Lowell,Massachusetts,42.6334247,-71.3161718
+1,America East Conference,aeast,2378,UMBC,UMBC,2050,Retriever Activities Center,Baltimore,Maryland,39.2908608,-76.6108073
+1,America East Conference,aeast,2619,Stony Brook,STON,,,Stony Brook,New York,40.9256538,-73.140943
+2,Atlantic Coast Conference,acc,52,Florida State,FSU,1952,Donald L. Tucker Center,Tallahassee,Florida,30.4380832,-84.2809332
+2,Atlantic Coast Conference,acc,59,Georgia Tech,GT,2206,McCamish Pavilion,Atlanta,Georgia,33.7490987,-84.3901849
+2,Atlantic Coast Conference,acc,87,Notre Dame,ND,282,Purcell Pavilion at the Joyce Center,South Bend,Indiana,41.6833813,-86.2500066
+2,Atlantic Coast Conference,acc,103,Boston College,BC,135,Silvio O. Conte Forum,Chestnut Hill,Massachusetts,42.330653,-71.1622757
+2,Atlantic Coast Conference,acc,120,Maryland,MD,2133,Comcast Center,College Park,Maryland,38.980666,-76.9369189
+2,Atlantic Coast Conference,acc,150,Duke,DUKE,1914,Cameron Indoor Stadium,Durham,North Carolina,35.9940329,-78.898619
+2,Atlantic Coast Conference,acc,152,North Carolina State,NCST,999,PNC Arena,Raleigh,North Carolina,35.7804015,-78.6390779
+2,Atlantic Coast Conference,acc,153,North Carolina,UNC,207,Dean E. Smith Center,Chapel Hill,North Carolina,35.9131996,-79.0558445
+2,Atlantic Coast Conference,acc,154,Wake Forest,WAKE,2120,Lawrence Joel Veterans Memorial Coliseum,Winston-salem,North Carolina,36.107356,-80.2529750913
+2,Atlantic Coast Conference,acc,183,Syracuse,SYR,1964,Carrier Dome,Syracuse,New York,43.0481221,-76.1474244
+2,Atlantic Coast Conference,acc,221,Pittsburgh,PITT,2025,Petersen Events Center,Pittsburgh,Pennsylvania,40.4416941,-79.9900861
+2,Atlantic Coast Conference,acc,228,Clemson,CLEM,1912,Littlejohn Coliseum,Clemson,South Carolina,34.6850749,-82.8364111
+2,Atlantic Coast Conference,acc,258,Virginia,UVA,1927,John Paul Jones Arena,Charlottesville,Virginia,38.029306,-78.4766781
+2,Atlantic Coast Conference,acc,259,Virginia Tech,VT,2119,Cassell Coliseum,Blacksburg,Virginia,37.2295733,-80.4139393
+2,Atlantic Coast Conference,acc,2390,Miami (FL),MIA,1985,BankUnited Center,Coral Gables,Florida,25.69087985,-80.2348599384
+3,Atlantic 10 Conference,atl10,45,George Washington,GW,2125,Charles E. Smith Center,Washington,District of Columbia,38.8951148,-77.0363716
+3,Atlantic 10 Conference,atl10,113,Massachusetts,MASS,1984,William D. Mullins Center,Amherst,Massachusetts,42.3803676,-72.523143
+3,Atlantic 10 Conference,atl10,139,Saint Louis,SLU,1947,Chaifetz Arena,Saint Louis,Missouri,38.6272733,-90.1978889
+3,Atlantic 10 Conference,atl10,179,St. Bonaventure,SBON,2042,Reilly Center,Saint Bonaventure,New York,42.0803426,-78.4750213
+3,Atlantic 10 Conference,atl10,227,Rhode Island,URI,2179,Thomas M. Ryan Center,Kingston,Rhode Island,41.4803791,-71.5225598
+3,Atlantic 10 Conference,atl10,257,Richmond,RICH,2068,Robins Center,Richmond,Virginia,37.5385087,-77.43428
+3,Atlantic 10 Conference,atl10,2168,Dayton,DAY,2039,University of Dayton Arena,Dayton,Ohio,39.7589478,-84.1916069
+3,Atlantic 10 Conference,atl10,2184,Duquesne,DUQ,1958,A.J. Palumbo Center,Pittsburgh,Pennsylvania,40.4416941,-79.9900861
+3,Atlantic 10 Conference,atl10,2230,Fordham,FOR,,,Bronx,New York,40.8514822,-73.8423837057
+3,Atlantic 10 Conference,atl10,2244,George Mason,GMU,2167,Patriot Center,Fairfax,Virginia,38.8462236,-77.3063733
+3,Atlantic 10 Conference,atl10,2325,La Salle,LAS,2172,Tom Gola Arena,Philadelphia,Pennsylvania,39.952335,-75.163789
+3,Atlantic 10 Conference,atl10,2603,Saint Joseph's,JOES,2150,Michael J. Hagan '85 Arena,Philadelphia,Pennsylvania,39.952335,-75.163789
+3,Atlantic 10 Conference,atl10,2670,Virginia Commonwealth,VCU,2051,Stuart Siegel Center,Richmond,Virginia,37.5385087,-77.43428
+4,Big East Conference,bige,46,Georgetown,GTWN,1823,Verizon Center,Washington,District of Columbia,38.8951148,-77.0363716
+4,Big East Conference,bige,156,Creighton,CREI,353,CenturyLink Center Omaha,Omaha,Nebraska,41.2587317,-95.9378732
+4,Big East Conference,bige,222,Villanova,VILL,1969,The Pavilion,Villanova,Pennsylvania,40.0373323,-75.3490769
+4,Big East Conference,bige,269,Marquette,MARQ,2099,BMO Harris Bradley Center,Milwaukee,Wisconsin,43.0349931,-87.922497
+4,Big East Conference,bige,305,DePaul,DEP,977,Allstate Arena,Rosemont,Illinois,41.9941334,-87.8756737
+4,Big East Conference,bige,2086,Butler,BUT,2032,Hinkle Fieldhouse,Indianapolis,Indiana,39.7683795,-86.1580447
+4,Big East Conference,bige,2507,Providence,PROV,146,Dunkin Donuts Center,Providence,Rhode Island,41.8239891,-71.4128343
+4,Big East Conference,bige,2550,Seton Hall,HALL,1826,Prudential Center,Newark,New Jersey,40.735657,-74.1723667
+4,Big East Conference,bige,2599,St. John's,SJU,2019,Carnesecca Arena,Jamaica,New York,40.691492,-73.8056894
+4,Big East Conference,bige,2752,Xavier,XAV,1973,Cintas Center,Cincinnati,Ohio,39.1014537,-84.5124602
+5,Big Sky Conference,bsky,16,Sacramento State,SAC,,,Sacramento,California,38.4732259,-121.2980707
+5,Big Sky Conference,bsky,147,Montana State,MTST,,,Bozeman,Montana,45.6799842,-111.0446748
+5,Big Sky Conference,bsky,149,Montana,MONT,1995,Dahlberg Arena,Missoula,Montana,46.8700801,-113.9952796
+5,Big Sky Conference,bsky,155,North Dakota,UND,,,Grand Forks,North Dakota,47.9078244,-97.0592028
+5,Big Sky Conference,bsky,253,Southern Utah,SUU,1960,Centrum Arena,Cedar City,Utah,37.6774769,-113.0618931
+5,Big Sky Conference,bsky,304,Idaho State,IDST,1930,Holt Arena,Pocatello,Idaho,42.8688613,-112.4401098
+5,Big Sky Conference,bsky,331,Eastern Washington,EWU,1959,Reese Court,Cheney,Washington,47.4873895,-117.5757622
+5,Big Sky Conference,bsky,2458,Northern Colorado,UNCO,2168,Butler-Hancock Hall,Greeley,Colorado,40.4233142,-104.7091322
+5,Big Sky Conference,bsky,2464,Northern Arizona,NAU,,,Flagstaff,Arizona,35.199458,-111.6514259
+5,Big Sky Conference,bsky,2502,Portland State,PRST,2026,Peter W Stott Center,Portland,Oregon,45.5202471,-122.6741949
+5,Big Sky Conference,bsky,2692,Weber State,WEB,2198,Dee Events Center,Ogden,Utah,41.2230048,-111.9738429
+6,Big South Conference,bsou,324,Coastal Carolina,CCAR,,,Conway,South Carolina,33.8360035,-79.0478143
+6,Big South Conference,bsou,2097,Campbell,CAMP,1906,John W. Pope Jr. Convocation Center,Buies Creek,North Carolina,35.4132168,-78.7355728
+6,Big South Conference,bsou,2127,Charleston Southern,CHSO,2187,CSU Fieldhouse,Charleston,South Carolina,32.7876012,-79.9402728
+6,Big South Conference,bsou,2241,Gardner-Webb,WEBB,2016,Paul Porter Arena,Boiling Springs,North Carolina,35.254292,-81.6670407
+6,Big South Conference,bsou,2272,High Point,HP,2059,Millis Center,High Point,North Carolina,35.9556924,-80.0053176
+6,Big South Conference,bsou,2335,Liberty,LIB,1981,Vines Center,Lynchburg,Virginia,37.4137536,-79.1422464
+6,Big South Conference,bsou,2344,Longwood,LONG,2097,Willett Hall,Farmville,Virginia,37.3020966,-78.3919403
+6,Big South Conference,bsou,2427,UNC Asheville,UNCA,2609,Kimmel Arena,Asheville,North Carolina,35.6009498,-82.5540161
+6,Big South Conference,bsou,2506,Presbyterian,PRE,2046,Ross E. Templeton P.E. Center,Clinton,South Carolina,34.4726277,-81.8806562
+6,Big South Conference,bsou,2515,Radford,RAD,1901,Dedmon Center,Radford,Virginia,37.1317924,-80.5764477
+6,Big South Conference,bsou,2678,Virginia Military,VMI,1970,Cameron Hall,Lexington,Virginia,37.7840208,-79.4428157
+6,Big South Conference,bsou,2737,Winthrop,WIN,1922,Winthrop Coliseum,Rock Hill,South Carolina,34.9248667,-81.0250784
+7,Big Ten Conference,big10,77,Northwestern,NW,1990,Welsh-Ryan Arena,Evanston,Illinois,42.0447388,-87.6930459
+7,Big Ten Conference,big10,84,Indiana,IND,2092,Assembly Hall,Bloomington,Indiana,39.1670396,-86.5342881
+7,Big Ten Conference,big10,127,Michigan State,MSU,1987,Jack Breslin Student Events Center,East Lansing,Michigan,42.7355416,-84.4852469
+7,Big Ten Conference,big10,130,Michigan,MICH,1986,Crisler Center,Ann Arbor,Michigan,42.2681569,-83.7312291
+7,Big Ten Conference,big10,135,Minnesota,MINN,,,Minneapolis,Minnesota,44.9772995,-93.2654692
+7,Big Ten Conference,big10,158,Nebraska,NEB,,,Lincoln,Nebraska,40.8000554,-96.6674005
+7,Big Ten Conference,big10,194,Ohio State,OSU,317,Value City Arena,Columbus,Ohio,39.9622601,-83.0007065
+7,Big Ten Conference,big10,213,Penn State,PSU,1942,Bryce Jordan Center,State College,Pennsylvania,40.794026,-77.8606975
+7,Big Ten Conference,big10,275,Wisconsin,WIS,348,Kohl Center,Madison,Wisconsin,43.074761,-89.3837613
+7,Big Ten Conference,big10,356,Illinois,ILL,2127,State Farm Center,Champaign,Illinois,40.0960397,-88.3047429844
+7,Big Ten Conference,big10,2294,Iowa,IOWA,363,Carver-Hawkeye Arena,Iowa City,Iowa,41.6612561,-91.5299106
+7,Big Ten Conference,big10,2509,Purdue,PUR,399,Mackey Arena,West Lafayette,Indiana,40.4258686,-86.9080655
+8,Big 12 Conference,big12,66,Iowa State,ISU,432,James H. Hilton Coliseum,Ames,Iowa,42.0346917,-93.6201507
+8,Big 12 Conference,big12,197,Oklahoma State,OKST,1992,Gallagher-Iba Arena,Stillwater,Oklahoma,36.1156071,-97.0583681
+8,Big 12 Conference,big12,201,Oklahoma,OKLA,1991,Lloyd Noble Center,Norman,Oklahoma,35.2225717,-97.4394816
+8,Big 12 Conference,big12,239,Baylor,BAY,1049,Ferrell Center,Waco,Texas,31.549333,-97.1466695
+8,Big 12 Conference,big12,251,Texas,TEX,2195,Frank Erwin Special Events Center,Austin,Texas,30.2711286,-97.7436995
+8,Big 12 Conference,big12,277,West Virginia,WVU,2199,WVU Coliseum,Morgantown,West Virginia,39.629526,-79.9558968
+8,Big 12 Conference,big12,2305,Kansas,KU,2171,Allen Fieldhouse,Lawrence,Kansas,38.9716689,-95.2352501
+8,Big 12 Conference,big12,2306,Kansas State,KSU,2131,Fred Bramlage Coliseum,Manhattan,Kansas,39.1836082,-96.5716694
+8,Big 12 Conference,big12,2628,TCU,TCU,2194,Daniel-Meyer Coliseum,Fort Worth,Texas,32.753177,-97.3327459
+8,Big 12 Conference,big12,2641,Texas Tech,TTU,2047,United Spirit Arena,Lubbock,Texas,33.6720835,-101.8580057155
+9,Big West Conference,bigw,13,Cal Poly,CP,812,Robert A. Mott Gym,San Luis Obispo,California,35.2827525,-120.6596156
+9,Big West Conference,bigw,27,UC Riverside,UCRV,2082,Student Recreation Center,Riverside,California,33.9533546,-117.3961623
+9,Big West Conference,bigw,62,Hawaii,HAW,540,Stan Sheriff Center,Honolulu,Hawaii,21.304547,-157.8556764
+9,Big West Conference,bigw,299,Long Beach State,LBSU,539,The Pyramid,Long Beach,California,33.7774658,-118.1884871
+9,Big West Conference,bigw,300,UC Irvine,UCI,469,Bren Events Center,Irvine,California,33.6862707,-117.8258199
+9,Big West Conference,bigw,302,UC Davis,UCD,2212,The Pavilion,Davis,California,38.545379,-121.7445835
+9,Big West Conference,bigw,2239,Cal State Fullerton,CSF,2003,Titan Gym,Fullerton,California,33.8725893,-117.9229191
+9,Big West Conference,bigw,2463,Cal State Northridge,CSN,586,Matadome,Northridge,California,34.2285918,-118.5369316
+9,Big West Conference,bigw,2540,UC Santa Barbara,UCSB,470,Thunderdome,Santa Barbara,California,34.3999755,-119.7030225493
+10,Colonial Athletic Association,col,48,Delaware,DEL,2189,Bob Carpenter Center Acierno Arena,Newark,Delaware,39.6852191,-75.7508289
+10,Colonial Athletic Association,col,111,Northeastern,NE,1219,Matthews Arena,Boston,Massachusetts,42.3604823,-71.0595678
+10,Colonial Athletic Association,col,119,Towson,TOWS,898,Towson Center,Towson,Maryland,39.4018565,-76.6023686
+10,Colonial Athletic Association,col,232,Charleston,COFC,,,Charleston,South Carolina,32.7876012,-79.9402728
+10,Colonial Athletic Association,col,256,James Madison,JMU,1980,JMU Convocation Center,Harrisonburg,Virginia,38.4440835,-78.8719367
+10,Colonial Athletic Association,col,350,North Carolina-Wilmington,UNCW,2157,Raiford G. Trask Coliseum,Wilmington,North Carolina,34.2257282,-77.9447107
+10,Colonial Athletic Association,col,2182,Drexel,DREX,1903,John A Daskalakis Center,Philadelphia,Pennsylvania,39.952335,-75.163789
+10,Colonial Athletic Association,col,2275,Hofstra,HOF,2058,Mack Sports Complex,Hempstead,New York,40.7062128,-73.6187397
+10,Colonial Athletic Association,col,2729,William & Mary,W&M,2200,Kaplan Arena,Williamsburg,Virginia,37.2707028,-76.7074502
+11,Conference USA,usa,5,UAB,UAB,2155,Bartow Arena,Birmingham,Alabama,33.5206824,-86.8024326
+11,Conference USA,usa,151,East Carolina,ECU,2094,Williams Arena,Minneapolis,Minnesota,44.9772995,-93.2654692
+11,Conference USA,usa,202,Tulsa,TLSA,2049,Donald Reynolds Center,Tulsa,Oklahoma,36.1524357,-95.9904093
+11,Conference USA,usa,242,Rice,RICE,1902,Tudor Fieldhouse,Houston,Texas,29.97281015,-95.527608682
+11,Conference USA,usa,249,North Texas,UNT,,,Denton,Texas,33.17283,-97.0589915363
+11,Conference USA,usa,276,Marshall,MRSH,1935,Henderson Center,Huntington,West Virginia,38.4192496,-82.445154
+11,Conference USA,usa,295,Old Dominion,ODU,1940,Constant Convocation Center,Norfolk,Virginia,36.93083365,-76.2573032494
+11,Conference USA,usa,2226,Florida Atlantic,FAU,2110,FAU Arena,Boca Raton,Florida,26.3586885,-80.0830984
+11,Conference USA,usa,2229,Florida International,FIU,2216,U.S. Century Bank Arena,Miami,Florida,25.7742658,-80.1936589
+11,Conference USA,usa,2348,Louisiana Tech,LT,1982,Thomas Assembly Center,Ruston,Louisiana,32.5232053,-92.637927
+11,Conference USA,usa,2393,Middle Tennessee,MTU,1897,Murphy Athletic Center,Murfreesboro,Tennessee,35.845999,-86.3920452
+11,Conference USA,usa,2429,Charlotte,CHAR,239,Dale F. Halton Arena,Charlotte,North Carolina,35.2270869,-80.8431268
+11,Conference USA,usa,2572,Southern Miss,USM,2009,Reed Green Coliseum,Hattiesburg,Mississippi,31.3271189,-89.2903392
+11,Conference USA,usa,2636,UTSA,UTSA,2115,UTSA Convocation Center,San Antonio,Texas,29.4246002,-98.4951405
+11,Conference USA,usa,2638,UTEP,UTEP,2117,Don Haskins Center,El Paso,Texas,31.7600372,-106.487287
+11,Conference USA,usa,2655,Tulane,TULN,2048,Devlin FIeldhouse,New Orleans,Louisiana,29.9499323,-90.0701156
+12,Ivy League,ivy,43,Yale,YALE,,,New Haven,Connecticut,41.3082138,-72.9250518
+12,Ivy League,ivy,108,Harvard,HARV,2209,Lavietes Pavilion,Cambridge,Massachusetts,42.3750997,-71.1056157
+12,Ivy League,ivy,159,Dartmouth,DART,2004,Edward Leede Arena,Hanover,New Hampshire,43.7033073,-72.2885663
+12,Ivy League,ivy,163,Princeton,PRIN,1900,L. Stockwell Jadwin Gymnasium,Princeton,New Jersey,40.3492744,-74.6592958
+12,Ivy League,ivy,171,Columbia,CLMB,2002,Francis S. Levien Gymnasium,New York,New York,40.7305991,-73.9865812
+12,Ivy League,ivy,172,Cornell,COR,1913,Newman Arena at The Fieldhouse,Ithaca,New York,42.4396039,-76.4968019
+12,Ivy League,ivy,219,Pennsylvania,PENN,1899,Palestra,Philadelphia,Pennsylvania,39.952335,-75.163789
+12,Ivy League,ivy,225,Brown,BRWN,2036,Paul Bailey Pizzitola Sports Center,Providence,Rhode Island,41.8239891,-71.4128343
+13,Metro Atlantic Athletic Conference,maac,314,Iona,IONA,2001,Hynes Athletics Center,New Rochelle,New York,40.9115386,-73.7826363
+13,Metro Atlantic Athletic Conference,maac,315,Niagara,NIAG,2177,Gallagher Center,Lewiston,New York,43.1725552,-79.0358783
+13,Metro Atlantic Athletic Conference,maac,2099,Canisius,CAN,2037,Koessler Athletic Center,Buffalo,New York,42.8864468,-78.8783689
+13,Metro Atlantic Athletic Conference,maac,2217,Fairfield,FAIR,1259,Webster Bank Arena at Harbor Yard,Bridgeport,Connecticut,41.1670412,-73.2048348
+13,Metro Atlantic Athletic Conference,maac,2363,Manhattan,MAN,2062,Draddy Gymnasium,Riverdale,New York,40.90056,-73.90639
+13,Metro Atlantic Athletic Conference,maac,2368,Marist,MRST,1934,McCann Center,Poughkeepsie,New York,41.7065779,-73.9284101
+13,Metro Atlantic Athletic Conference,maac,2405,Monmouth,MONM,2163,Multipurpose Activity Center,West Long Branch,New Jersey,40.2903891,-74.0176381
+13,Metro Atlantic Athletic Conference,maac,2514,Quinnipiac,QUIN,1907,TD Banknorth SportsCenter,Hamden,Connecticut,41.3959287,-72.8968716
+13,Metro Atlantic Athletic Conference,maac,2520,Rider,RID,1944,Alumni Gymnasium,Lawrenceville,New Jersey,40.2973299,-74.7296049
+13,Metro Atlantic Athletic Conference,maac,2561,Siena,SIE,,,Loudonville,New York,42.7048009,-73.7548424
+13,Metro Atlantic Athletic Conference,maac,2612,St. Peter's,SPU,1963,Yanitelli Center,Jersey City,New Jersey,40.7281575,-74.0776417
+14,Mid-American Conference,midam,189,Bowling Green,BGSU,2220,Stroh Center,Bowling Green,Ohio,41.3747744,-83.6513229
+14,Mid-American Conference,midam,193,Miami (OH),M-OH,2134,John D. Millett Hall,Oxford,Ohio,39.5069974,-84.745231
+14,Mid-American Conference,midam,195,Ohio,OHIO,2135,Convocation Center,Athens,Ohio,39.3292396,-82.1012555
+14,Mid-American Conference,midam,2006,Akron,AKR,2203,James A. Rhodes Arena,Akron,Ohio,41.0814447,-81.5190053
+14,Mid-American Conference,midam,2050,Ball State,BALL,299,John E. Worthen Arena,Muncie,Indiana,40.1936683,-85.3865114
+14,Mid-American Conference,midam,2084,Buffalo,BUFF,2107,Alumni Arena,Buffalo,New York,42.8864468,-78.8783689
+14,Mid-American Conference,midam,2117,Central Michigan,CMU,2087,McGuirk Arena,Mount Pleasant,Michigan,43.597646,-84.7668495
+14,Mid-American Conference,midam,2199,Eastern Michigan,EMU,2109,Convocation Center,Ypsilanti,Michigan,42.2411499,-83.6129939
+14,Mid-American Conference,midam,2309,Kent State,KENT,2020,Memorial A & C Center,Kent,Ohio,41.1536674,-81.357886
+14,Mid-American Conference,midam,2459,Northern Illinois,NIU,2090,Convocation Center,Dekalb,Illinois,41.9294736,-88.7503647
+14,Mid-American Conference,midam,2649,Toledo,TOL,2116,Savage Hall,Toledo,Ohio,41.6786754,-83.5127283
+14,Mid-American Conference,midam,2711,Western Michigan,WMU,1972,University Arena in Read Fieldhouse,Kalamazoo,Michigan,42.291707,-85.5872286
+16,Mid-Eastern Athletic Conference,meac,47,Howard,HOW,1978,Burr Arena,Washington,District of Columbia,38.8951148,-77.0363716
+16,Mid-Eastern Athletic Conference,meac,50,Florida A&M,FAMU,2205,Al Lawson Center,Tallahassee,Florida,30.4380832,-84.2809332
+16,Mid-Eastern Athletic Conference,meac,2065,Bethune-Cookman,COOK,2073,Moore Gym,Daytona Beach,Florida,29.2108147,-81.0228331
+16,Mid-Eastern Athletic Conference,meac,2154,Coppin State,COPP,,,Baltimore,Maryland,39.2908608,-76.6108073
+16,Mid-Eastern Athletic Conference,meac,2169,Delaware State,DSU,1957,Memorial Hall,Dover,Delaware,39.158168,-75.5243682
+16,Mid-Eastern Athletic Conference,meac,2261,Hampton,HAMP,2017,Hampton Convocation Center,Hampton,Virginia,37.0298687,-76.3452218
+16,Mid-Eastern Athletic Conference,meac,2379,Maryland-Eastern Shore,UMES,2064,William P Hytche Athletic Center,Princess Anne,Maryland,38.2028993,-75.692427
+16,Mid-Eastern Athletic Conference,meac,2415,Morgan State,MORG,2021,Hill Field House,Baltimore,Maryland,39.2908608,-76.6108073
+16,Mid-Eastern Athletic Conference,meac,2428,North Carolina Central,NCCU,2081,McDougald-McLendon Gymnasium,Durham,North Carolina,35.9940329,-78.898619
+16,Mid-Eastern Athletic Conference,meac,2448,North Carolina A&T,NCAT,2066,Corbett Sports Center,Greensboro,North Carolina,36.0726355,-79.7919754
+16,Mid-Eastern Athletic Conference,meac,2450,Norfolk State,NORF,1989,Echols Hall,Norfolk,Virginia,36.93083365,-76.2573032494
+16,Mid-Eastern Athletic Conference,meac,2542,Savannah State,SAV,1931,Tiger Arena,Savannah,Georgia,32.0835407,-81.0998342
+16,Mid-Eastern Athletic Conference,meac,2569,South Carolina State,SCST,2077,Smith-Hammond-Middleton Center,Orangeburg,South Carolina,33.4054944,-80.778429
+18,Missouri Valley Conference,mvc,71,Bradley,BRAD,406,Carver Arena,Peoria,Illinois,40.6938609,-89.5891008
+18,Missouri Valley Conference,mvc,79,Southern Illinois,SIU,2190,SIU Arena,Carbondale,Illinois,37.7272727,-89.2167501
+18,Missouri Valley Conference,mvc,282,Indiana State,INST,2170,Hulman Center,Terre Haute,Indiana,39.4667025,-87.4139119
+18,Missouri Valley Conference,mvc,339,Evansville,EVAN,2462,Ford Center,Evansville,Indiana,37.9747645,-87.5558483
+18,Missouri Valley Conference,mvc,2181,Drake,DRKE,2075,Knapp Center,Des Moines,Iowa,41.5910641,-93.6037149
+18,Missouri Valley Conference,mvc,2287,Illinois State,ILST,1932,Redbird Arena,Normal,Illinois,40.5117699,-88.9944815
+18,Missouri Valley Conference,mvc,2350,Loyola (IL),L-IL,1933,Joseph J. Gentile Center,Chicago,Illinois,41.8756208,-87.6243706
+18,Missouri Valley Conference,mvc,2460,Northern Iowa,UNI,1948,McLeod Center,Cedar Falls,Iowa,42.5277622,-92.4454654
+18,Missouri Valley Conference,mvc,2623,Missouri State,MOSU,1966,JQH Arena,Springfield,Missouri,37.2153307,-93.2982521
+18,Missouri Valley Conference,mvc,2724,Wichita State,WICH,2086,Charles Koch Arena,Wichita,Kansas,37.6922361,-97.3375448
+19,Northeast Conference,neast,116,Mount St. Mary's,MSM,2175,Knott Arena,Emmitsburg,Maryland,39.7045417,-77.3269307
+19,Northeast Conference,neast,161,Fairleigh Dickinson,FDU,2076,Rothman Center,Teaneck,New Jersey,40.8975992,-74.0159727
+19,Northeast Conference,neast,2115,Central Connecticut State,CCSU,2144,William H. Detrick Gymnasium,New Britain,Connecticut,41.6804055,-72.7882761342
+19,Northeast Conference,neast,2341,LIU Brooklyn,LIU,2140,Wellness Recreation and Athletic Center,Brooklyn,New York,40.6501038,-73.9495823
+19,Northeast Conference,neast,2523,Robert Morris,RMU,2069,Charles L. Sewall Center,Moon Township,Pennsylvania,40.5089566,-80.2392263
+19,Northeast Conference,neast,2529,Sacred Heart,SHU,1916,William Pitt Center - West Gym,Fairfield,Connecticut,41.2943069,-73.37486
+19,Northeast Conference,neast,2597,St. Francis (NY),SFNY,2060,Peter Aquilone Court,Brooklyn,New York,40.6501038,-73.9495823
+19,Northeast Conference,neast,2598,St. Francis U,SFU,2149,DeGol Arena,Loretto,Pennsylvania,40.5029161,-78.6314019
+19,Northeast Conference,neast,2681,Wagner,WAG,2085,Spiro Sports Center,Staten Island,New York,40.5834557,-74.1496048
+19,Northeast Conference,neast,2803,Bryant University,BRY,2182,Chace Athletic Center,Smithfield,Rhode Island,41.9220433,-71.549507
+20,Ohio Valley Conference,ovc,55,Jacksonville State,JVST,2130,Pete Mathews Coliseum,Jacksonville,Alabama,33.8137125,-85.7613536
+20,Ohio Valley Conference,ovc,93,Murray State,MURR,2022,CFSB Center,Murray,Kentucky,36.6103334,-88.314761
+20,Ohio Valley Conference,ovc,2046,Austin Peay,PEAY,,,Clarksville,Tennessee,36.5285918,-87.3098696
+20,Ohio Valley Conference,ovc,2057,Belmont,BEL,2098,Curb Event Center,Nashville,Tennessee,36.1622257,-86.7743419
+20,Ohio Valley Conference,ovc,2197,Eastern Illinois,EIU,2138,Lantz Arena,Charleston,Illinois,39.4961458,-88.1761521
+20,Ohio Valley Conference,ovc,2198,Eastern Kentucky,EKY,,,Richmond,Kentucky,37.7478572,-84.2946539
+20,Ohio Valley Conference,ovc,2413,Morehead State,MORE,2174,Ellis T Johnson Arena,Morehead,Kentucky,38.1839705,-83.4326841
+20,Ohio Valley Conference,ovc,2546,Southeast Missouri State,SEMO,1917,Show Me Center,Cape Girardeau,Missouri,37.3058839,-89.5181476
+20,Ohio Valley Conference,ovc,2565,SIU-Edwardsville,SIUE,1919,Sam M. Vadalabene Center,Edwardsville,Illinois,38.8114364,-89.953157
+20,Ohio Valley Conference,ovc,2630,Tennessee-Martin,UTM,2043,Skyhawk Arena,Martin,Tennessee,36.3433965,-88.850338
+20,Ohio Valley Conference,ovc,2634,Tennessee State,TNST,2113,Gentry Center,Nashville,Tennessee,36.1622257,-86.7743419
+20,Ohio Valley Conference,ovc,2635,Tennessee Tech,TNTC,2152,Hooper Eblen Arena,Cookeville,Tennessee,36.162839,-85.5016423
+21,Pac-12 Conference,pac12,9,Arizona State,ASU,833,Wells Fargo Arena,Tempe,Arizona,33.4146319,-111.9093793
+21,Pac-12 Conference,pac12,12,Arizona,ARIZ,1064,McKale Center,Tucson,Arizona,32.2217429,-110.926479
+21,Pac-12 Conference,pac12,24,Stanford,STAN,820,Maples Pavilion,Stanford,California,37.4266268,-122.1701137024
+21,Pac-12 Conference,pac12,25,California,CAL,496,Haas Pavilion,Berkeley,California,37.8708789,-122.2728247
+21,Pac-12 Conference,pac12,26,UCLA,UCLA,479,Pauley Pavilion,Los Angeles,California,34.0536781,-118.2427025
+21,Pac-12 Conference,pac12,30,USC,USC,1918,Galen Center,Los Angeles,California,34.0536781,-118.2427025
+21,Pac-12 Conference,pac12,38,Colorado,COLO,2207,Coors Events Center,Boulder,Colorado,40.0149856,-105.2705456
+21,Pac-12 Conference,pac12,204,Oregon State,ORST,506,Gill Coliseum,Corvallis,Oregon,44.5645659,-123.2620435
+21,Pac-12 Conference,pac12,254,Utah,UTAH,2196,Jon M. Huntsman Center,Salt Lake City,Utah,40.7606467,-111.89109
+21,Pac-12 Conference,pac12,264,Washington,WASH,782,Alaska Airlines Arena,Seattle,Washington,47.6038321,-122.3300624
+21,Pac-12 Conference,pac12,265,Washington State,WSU,2052,Wallis Beasley Performing Arts Coliseum,Pullman,Washington,46.7304625,-117.1645608126
+21,Pac-12 Conference,pac12,2483,Oregon,ORE,1977,Matthew Knight Arena,Eugene,Oregon,44.0505054,-123.0950506
+22,Patriot League,pat,44,American University,AMER,1910,Bender Arena Sports Center,Washington,District of Columbia,38.8951148,-77.0363716
+22,Patriot League,pat,104,Boston University,BU,1999,Case Gym,Boston,Massachusetts,42.3604823,-71.0595678
+22,Patriot League,pat,107,Holy Cross,HC,137,Hart Recreation Center,Worcester,Massachusetts,42.2625932,-71.8022934
+22,Patriot League,pat,322,Lafayette,LAF,2132,Kirby Sports Center,Easton,Pennsylvania,40.6916081,-75.2099866
+22,Patriot League,pat,349,Army,ARMY,2186,Christl Arena,West Point,New York,41.3929109,-73.9568049
+22,Patriot League,pat,2083,Bucknell,BUCK,2208,Sojka Pavilion,Lewisburg,Pennsylvania,40.9645293,-76.8844101
+22,Patriot League,pat,2142,Colgate,COLG,2188,Cotterell Court,Hamilton,New York,43.6307863,-74.4659275
+22,Patriot League,pat,2329,Lehigh,LEH,2141,Stabler Arena,Bethlehem,Pennsylvania,40.6178915,-75.3786521
+22,Patriot League,pat,2352,Loyola (MD),L-MD,2093,Reitz Arena,Baltimore,Maryland,39.2908608,-76.6108073
+22,Patriot League,pat,2426,Navy,NAVY,2176,Alumni Hall,Annapolis,Maryland,38.9786401,-76.492786
+23,Southeastern Conference,sec,2,Auburn,AUB,1953,Auburn Arena,Auburn,Alabama,32.571296,-85.4079897899
+23,Southeastern Conference,sec,8,Arkansas,ARK,2142,Bud Walton Arena,Fayetteville,Arkansas,36.0694725,-94.2054387226
+23,Southeastern Conference,sec,57,Florida,FLA,360,Stephen C. O'Connell Center,Gainesville,Florida,29.651907,-82.3247976
+23,Southeastern Conference,sec,61,Georgia,UGA,2088,Stegeman Coliseum,Athens,Georgia,33.9595974,-83.376678
+23,Southeastern Conference,sec,96,Kentucky,UK,251,Rupp Arena,Lexington,Kentucky,38.0464066,-84.4970393
+23,Southeastern Conference,sec,99,LSU,LSU,557,Pete Maravich Assembly Center,Baton Rouge,Louisiana,30.4507462,-91.154551
+23,Southeastern Conference,sec,142,Missouri,MIZZ,2071,Mizzou Arena,Columbia,Missouri,38.951883,-92.3337366
+23,Southeastern Conference,sec,145,Ole Miss,MISS,1941,C.M. 'Tad' Smith Coliseum,Oxford,Mississippi,34.3664127,-89.5187664
+23,Southeastern Conference,sec,238,Vanderbilt,VAN,2084,Memorial Gym,Nashville,Tennessee,36.1622257,-86.7743419
+23,Southeastern Conference,sec,245,Texas A&M,TA&M,2114,Reed Arena,College Station,Texas,30.6262616,-96.3347249
+23,Southeastern Conference,sec,333,Alabama,ALA,1925,Coleman Coliseum,Tuscaloosa,Alabama,33.2668398,-87.4862182
+23,Southeastern Conference,sec,344,Mississippi State,MSST,2095,Humphrey Coliseum,Starkville,Mississippi,33.4594945,-88.8298568829
+23,Southeastern Conference,sec,2579,South Carolina,SCAR,1962,Colonial Life Arena,Columbia,South Carolina,34.0007104,-81.0348144
+23,Southeastern Conference,sec,2633,Tennessee,TENN,2044,Thompson-Boling Arena,Knoxville,Tennessee,35.9603948,-83.9210261
+24,Southern Conference,south,231,Furman,FUR,2166,Timmons Arena,Greenville,South Carolina,34.8512316,-82.3985105
+24,Southern Conference,south,236,Chattanooga,CHAT,2146,McKenzie Arena,Chattanooga,Tennessee,35.0456297,-85.3096801
+24,Southern Conference,south,290,Georgia Southern,GASO,2089,W.S. Hanner Fieldhouse,Statesboro,Georgia,32.4487877,-81.7831674
+24,Southern Conference,south,2026,Appalachian State,APP,2137,Holmes Convocation Center,Boone,North Carolina,36.216795,-81.6745517
+24,Southern Conference,south,2166,Davidson,DAV,194,Belk Arena,Davidson,North Carolina,35.7902384,-80.2115053
+24,Southern Conference,south,2210,Elon,ELON,2096,Alumni Gym,Elon,North Carolina,36.1029132,-79.5066895
+24,Southern Conference,south,2430,UNC Greensboro,UNCG,349,Greensboro Coliseum,Greensboro,North Carolina,36.0726355,-79.7919754
+24,Southern Conference,south,2535,Samford,SAM,2191,Pete Hanna Center,Birmingham,Alabama,33.5206824,-86.8024326
+24,Southern Conference,south,2643,Citadel,CIT,2154,McAlister Field House,Charleston,South Carolina,32.7876012,-79.9402728
+24,Southern Conference,south,2717,Western Carolina,WCU,245,Ramsey Center,Cullowhee,North Carolina,35.3137111,-83.1765333
+24,Southern Conference,south,2747,Wofford,WOF,2121,Benjamin Johnson Arena,Spartanburg,South Carolina,34.9498007,-81.9320157
+25,Southland Conference,land,198,Oral Roberts,ORU,1993,Mabee Center,Tulsa,Oklahoma,36.1524357,-95.9904093
+25,Southland Conference,land,357,Texas A&M-CC,AMCC,2211,American Bank Center,Corpus Christi,Texas,27.8002542,-97.3955744
+25,Southland Conference,land,2000,Abilene Christian,ACU,,,Abilene,Texas,32.4464534,-99.7333478
+25,Southland Conference,land,2110,Central Arkansas,CARK,1908,Farris Center,Conway,Arkansas,35.0886963,-92.4421011
+25,Southland Conference,land,2277,Houston Baptist,HBU,2012,Sharp Gymnasium,Houston,Texas,29.97281015,-95.527608682
+25,Southland Conference,land,2320,Lamar,LAM,1896,Montagne Center,Beaumont,Texas,30.0860459,-94.1018461
+25,Southland Conference,land,2377,McNeese State,MCNS,2063,Burton Coliseum,Lake Charles,Louisiana,30.2265949,-93.2173759
+25,Southland Conference,land,2443,New Orleans,UNO,1926,Lakefront Arena,New Orleans,Louisiana,29.9499323,-90.0701156
+25,Southland Conference,land,2447,Nicholls State,NICH,2067,David R. Stopher Gym,Thibodaux,Louisiana,29.7957633,-90.822871
+25,Southland Conference,land,2466,Northwestern State,NWST,1939,Prather Coliseum,Natchitoches,Louisiana,31.6464192,-93.1427138
+25,Southland Conference,land,2534,Sam Houston State,SHSU,,,Huntsville,Texas,30.6976075,-95.552581981
+25,Southland Conference,land,2545,Southeastern Louisiana,SELA,2040,University Center,Hammond,Louisiana,30.5043583,-90.4611995
+25,Southland Conference,land,2617,Stephen F. Austin,SFA,2079,William R. Johnson Coliseum,Nacogdoches,Texas,31.5970503,-94.5927451
+25,Southland Conference,land,2916,Incarnate Word,IW,,,San Antonio,Texas,29.4246002,-98.4951405
+26,Southwestern Athletic Conference,swac,2010,Alabama A&M,AAMU,2122,Elmore Building,Normal,Alabama,34.7889792,-86.5719369
+26,Southwestern Athletic Conference,swac,2011,Alabama State,ALST,2204,Dunn-Oliver Acadome,Montgomery,Alabama,32.343799,-86.2731660233
+26,Southwestern Athletic Conference,swac,2016,Alcorn State,ALCN,2072,David L. Whitney Gymnasium,Lorman,Mississippi,31.8204396,-91.0501057
+26,Southwestern Athletic Conference,swac,2029,Arkansas-Pine Bluff,ARPB,2105,H.O. Clemmons Arena,Pine Bluff,Arkansas,34.210538,-92.0165290365
+26,Southwestern Athletic Conference,swac,2296,Jackson State,JKST,1945,Williams Center,Jackson,Mississippi,32.4104055,-90.1620936054
+26,Southwestern Athletic Conference,swac,2400,Mississippi Valley State,MVSU,1988,Harrison Complex,Itta Bena,Mississippi,33.4998215,-90.323805841
+26,Southwestern Athletic Conference,swac,2504,Prairie View A&M,PV,2027,William Nicks Center,Prairie View,Texas,30.0932737,-95.9877339
+26,Southwestern Athletic Conference,swac,2582,Southern University,SOU,2210,F.G. Clark Center,Baton Rouge,Louisiana,30.4507462,-91.154551
+26,Southwestern Athletic Conference,swac,2640,Texas Southern,TXSO,2165,Health & PE Center,Houston,Texas,29.97281015,-95.527608682
+26,Southwestern Athletic Conference,swac,2755,Grambling State,GRAM,1928,Assembly Center,Grambling,Louisiana,32.5276503,-92.7140403
+27,Sun Belt Conference,belt,6,South Alabama,USA,2193,Mitchell Center,Mobile,Alabama,30.6943566,-88.0430541
+27,Sun Belt Conference,belt,98,Western Kentucky,WKU,1971,E.A. Diddle Arena,Bowling Green,Kentucky,36.9903199,-86.4436018
+27,Sun Belt Conference,belt,250,Texas-Arlington,UTA,3416,College Park Center,Arlington,Texas,32.735687,-97.1080656
+27,Sun Belt Conference,belt,309,Louisiana-Lafayette,ULL,373,Cajun Dome,Lafayette,Louisiana,30.2240897,-92.0198427
+27,Sun Belt Conference,belt,326,Texas State,TXST,2010,Strahan Coliseum,San Marcos,Texas,29.8826436,-97.9405828
+27,Sun Belt Conference,belt,2031,Arkansas-Little Rock,UALR,2180,Jack Stephens Center,Little Rock,Arkansas,34.7464809,-92.2895948
+27,Sun Belt Conference,belt,2032,Arkansas State,ARST,2033,Convocation Center,Jonesboro,Arkansas,35.82101165,-90.6682834233
+27,Sun Belt Conference,belt,2247,Georgia State,GAST,2057,GSU Sports Arena,Atlanta,Georgia,33.7490987,-84.3901849
+27,Sun Belt Conference,belt,2433,Louisiana-Monroe,ULM,2061,Fant-Ewing Coliseum,Monroe,Louisiana,32.5093109,-92.1193012
+27,Sun Belt Conference,belt,2653,Troy,TROY,4489,Trojan Arena,Troy,Alabama,31.7640145,-85.9566487731
+29,West Coast Conference,wcc,252,Brigham Young,BYU,2108,Marriott Center,Provo,Utah,40.2338438,-111.6585337
+29,West Coast Conference,wcc,279,Pacific,PAC,553,Spanos Center,Stockton,California,37.9577016,-121.2907796
+29,West Coast Conference,wcc,301,San Diego,USD,501,Jenny Craig Pavilion,San Diego,California,32.7469869,-117.21177
+29,West Coast Conference,wcc,2250,Gonzaga,GONZ,1979,McCarthey Athletic Center,Spokane,Washington,47.6588603,-117.4247134
+29,West Coast Conference,wcc,2351,Loyola Marymount,LMU,2173,Albert Gersten Pavilion,Los Angeles,California,34.0536781,-118.2427025
+29,West Coast Conference,wcc,2492,Pepperdine,PEPP,1055,Firestone Fieldhouse,Malibu,California,34.0057791,-118.80704
+29,West Coast Conference,wcc,2501,Portland,PORT,2136,Earle A. Chiles Center,Portland,Oregon,45.5202471,-122.6741949
+29,West Coast Conference,wcc,2539,San Francisco,SF,789,War Memorial Gymnasium,San Francisco,California,37.7789601,-122.419199
+29,West Coast Conference,wcc,2541,Santa Clara,SCU,544,Leavey Center,Santa Clara,California,37.2333253,-121.6846349
+29,West Coast Conference,wcc,2608,Saint Mary's,SMC,488,McKeon Pavilion,Moraga,California,37.842209,-122.1171821213
+30,Western Athletic Conference,wac,70,Idaho,IDHO,2018,Cowan Spectrum at the Kibbie Dome,Moscow,Idaho,46.7323875,-117.0001651
+30,Western Athletic Conference,wac,140,UMKC,UMKC,2181,Municipal Auditorium,Kansas City,Missouri,39.0844687,-94.5630298
+30,Western Athletic Conference,wac,166,New Mexico State,NMSU,1937,Pan American Center,Las Cruces,New Mexico,32.3140549,-106.7798135
+30,Western Athletic Conference,wac,292,Texas-Pan American,UTPA,2153,UTPA Fieldhouse,Edinburg,Texas,26.3013982,-98.1624501
+30,Western Athletic Conference,wac,2130,Chicago State,CHS,1951,Jones Convocation Center,Chicago,Illinois,41.8756208,-87.6243706
+30,Western Athletic Conference,wac,2253,Grand Canyon,GCU,,,Phoenix,Arizona,33.4483772,-112.0740374
+30,Western Athletic Conference,wac,2547,Seattle,SEA,2184,KeyArena,Seattle,Washington,47.6038321,-122.3300624
+30,Western Athletic Conference,wac,2934,Cal State Bakersfield,CSB,1242,Rabobank Arena,Bakersfield,California,35.3738712,-119.0194639
+30,Western Athletic Conference,wac,3084,Utah Valley,UVU,2091,UCCU Events Center,Orem,Utah,40.2975185,-111.6944685
+43,Division I Independents,ind,2885,N.J.I.T.,NJIT,1909,Fleisher Center,Newark,New Jersey,40.735657,-74.1723667
+44,Mountain West Conference,mwest,21,San Diego State,SDSU,2111,Viejas Arena at Aztec Bowl,San Diego,California,32.7469869,-117.21177
+44,Mountain West Conference,mwest,23,San Jose State,SJSU,2192,San Jose State Event Center,San Jose,California,37.3438502,-121.8831349
+44,Mountain West Conference,mwest,36,Colorado State,CSU,475,Moby Arena,Fort Collins,Colorado,40.5508527,-105.0668085
+44,Mountain West Conference,mwest,68,Boise State,BSU,2028,Taco Bell Arena,Boise,Idaho,43.615046,-116.2044429
+44,Mountain West Conference,mwest,167,New Mexico,UNM,2024,University Arena,Albuquerque,New Mexico,35.0841034,-106.6509851
+44,Mountain West Conference,mwest,278,Fresno State,FRES,914,Save Mart Center,Fresno,California,36.730738,-119.6992009338
+44,Mountain West Conference,mwest,328,Utah State,USU,2128,Dee Glen Smith Spectrum,Logan,Utah,41.7313447,-111.8348631
+44,Mountain West Conference,mwest,2005,Air Force,AFA,2014,Clune Arena,Colorado Springs,Colorado,38.8338816,-104.8213634
+44,Mountain West Conference,mwest,2439,UNLV,UNLV,2083,Thomas & Mack Center,Las Vegas,Nevada,36.145204,-115.1611806
+44,Mountain West Conference,mwest,2440,Nevada,NEV,461,Lawlor Events Center,Reno,Nevada,39.52927,-119.8136744
+44,Mountain West Conference,mwest,2751,Wyoming,WYO,2053,Arena-Auditorium,Laramie,Wyoming,41.3113669,-105.5911007
+45,Horizon League,hor,82,Illinois-Chicago,UIC,1895,UIC Pavilion,Chicago,Illinois,41.8756208,-87.6243706
+45,Horizon League,hor,270,Milwaukee,MILW,1983,US Cellular Arena,Milwaukee,Wisconsin,43.0349931,-87.922497
+45,Horizon League,hor,325,Cleveland State,CLEV,2143,Wolstein Center,Cleveland,Ohio,41.4871888,-81.6778691
+45,Horizon League,hor,2174,Detroit,DET,2005,Calihan Hall,Detroit,Michigan,42.3486635,-83.0567375
+45,Horizon League,hor,2473,Oakland,OAK,,,Rochester,Michigan,42.680588,-83.1338214
+45,Horizon League,hor,2674,Valparaiso,VALP,2159,Athletics-Recreation Center,Valparaiso,Indiana,41.4730948,-87.0611412
+45,Horizon League,hor,2739,Green Bay,GB,522,Resch Center,Ashwaubenon,Wisconsin,44.4780535,-88.0755043124
+45,Horizon League,hor,2750,Wright State,WRST,192,Ervin J. Nutter Center,Dayton,Ohio,39.7589478,-84.1916069
+45,Horizon League,hor,2754,Youngstown State,YSU,2054,Beeghly Physical Education Center,Youngstown,Ohio,41.0997803,-80.6495194
+46,Atlantic Sun Conference,a-sun,56,Stetson,STET,2080,Edmunds Center,Deland,Florida,29.0194825,-81.2941418008
+46,Atlantic Sun Conference,a-sun,94,Northern Kentucky,NKU,1920,Bank of Kentucky Center,Highland Heights,Kentucky,39.0331169,-84.4518854
+46,Atlantic Sun Conference,a-sun,288,Lipscomb,LIP,2038,Allen Arena,Nashville,Tennessee,36.1622257,-86.7743419
+46,Atlantic Sun Conference,a-sun,294,Jacksonville,JAC,,,Jacksonville,Florida,30.3321838,-81.655651
+46,Atlantic Sun Conference,a-sun,338,Kennesaw State,KENN,2015,KSU Convocation Center,Kennesaw,Georgia,34.0234337,-84.6154897
+46,Atlantic Sun Conference,a-sun,526,Florida Gulf Coast,FGCU,2101,Alico Arena,Fort Myers,Florida,26.640628,-81.8723084
+46,Atlantic Sun Conference,a-sun,2193,East Tennessee State,ETSU,2006,MSHA Athletic Center,Johnson City,Tennessee,36.3134398,-82.3534728
+46,Atlantic Sun Conference,a-sun,2382,Mercer,MER,1974,Hawkins Arena,Macon,Georgia,32.8406946,-83.6324022
+46,Atlantic Sun Conference,a-sun,2454,North Florida,UNF,2123,UNF Arena,Jacksonville,Florida,30.3321838,-81.655651
+46,Atlantic Sun Conference,a-sun,2908,USC Upstate,UPST,,,Spartanburg,South Carolina,34.9498007,-81.9320157
+49,Summit League,summ,85,IUPUI,IUPU,2129,IUPUI Gymnasium,Indianapolis,Indiana,39.7683795,-86.1580447
+49,Summit League,summ,233,South Dakota,SDAK,1905,DakotaDome,Vermillion,South Dakota,42.7794417,-96.9292104
+49,Summit League,summ,2172,Denver,DEN,444,Magness Arena,Denver,Colorado,39.7391536,-104.9847034
+49,Summit League,summ,2437,Nebraska-Omaha,UNO,,,Omaha,Nebraska,41.2587317,-95.9378732
+49,Summit League,summ,2449,North Dakota State,NDSU,2035,Bison Sports Arena,Fargo,North Dakota,46.8770537,-96.7897661
+49,Summit League,summ,2571,South Dakota State,SDSU,1996,Frost Arena,Brookings,South Dakota,44.3115019,-96.7986421
+49,Summit League,summ,2710,Western Illinois,WIU,2197,Western Hall,Macomb,Illinois,40.4592076,-90.6717971
+49,Summit League,summ,2870,IPFW,IPFW,1261,Hilliard Gates Sports Center,Fort Wayne,Indiana,41.0799898,-85.1386015
+62,American Athletic Conference,aac,41,Connecticut,CONN,64,XL Center,Hartford,Connecticut,41.765599,-72.6905850074
+62,American Athletic Conference,aac,58,South Florida,USF,2041,USF Sun Dome,Tampa,Florida,27.9477595,-82.458444
+62,American Athletic Conference,aac,97,Louisville,LOU,2030,KFC Yum! Center,Louisville,Kentucky,38.2542376,-85.759407
+62,American Athletic Conference,aac,164,Rutgers,RUTG,2008,Louis Brown Athletic Center,Piscataway,New Jersey,40.4992714,-74.3990392
+62,American Athletic Conference,aac,218,Temple,TEM,2011,Liacouras Center,Philadelphia,Pennsylvania,39.952335,-75.163789
+62,American Athletic Conference,aac,235,Memphis,MEM,1392,FedExForum,Memphis,Tennessee,35.1490215,-90.0516285
+62,American Athletic Conference,aac,248,Houston,HOU,2126,Hofheinz Pavilion,Houston,Texas,29.97281015,-95.527608682
+62,American Athletic Conference,aac,2116,UCF,UCF,2074,CFE Federal Credit Union Arena,Orlando,Florida,28.5421175,-81.3790462
+62,American Athletic Conference,aac,2132,Cincinnati,CIN,201,Fifth Third Arena,Cincinnati,Ohio,39.1014537,-84.5124602
+62,American Athletic Conference,aac,2567,Southern Methodist,SMU,1961,Moody Coliseum,Dallas,Texas,32.7801052,-96.8000082

@@ -1,7 +1,7 @@
 package com.redhat.rhc.marchmadness.solver;
 
 dialect "mvel"
-    
+
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
 
 import bracketplanner.domain.Bracket;
@@ -62,7 +62,6 @@ when
 then
     scoreHolder.addHardConstraintMatch(kcontext, -1);
 end
-	
 
 // ############################################################################
 // Soft scores
@@ -73,7 +72,7 @@ when
 	$team : Team($expectedSeed: expectedSeed)
 	$seeding : Seeding(team == $team, $actualSeed: seed)
 then
-    scoreHolder.addSoftConstraintMatch(kcontext, -1000 * ($expectedSeed - $actualSeed) * ($expectedSeed - $actualSeed));
+    scoreHolder.addSoftConstraintMatch(kcontext, -500 * Math.abs(Math.pow($expectedSeed - $actualSeed, 3)))
 end
 
 rule "Team distance from pod site"

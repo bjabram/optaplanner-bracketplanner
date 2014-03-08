@@ -1,8 +1,12 @@
 package bracketplanner.domain;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
+
+import bracketplanner.util.BracketPlannerUtil;
 
 import com.javadocmd.simplelatlng.LatLng;
 
@@ -11,20 +15,18 @@ public class Team extends LatLng {
 
 	private int rank;
 	private String name;
-	private double rpi;
-	private double sos;
+	private String abbreviation;
 	private String conference;
 
 	public Team(double latitude, double longitude) {
-		this(-1, StringUtils.EMPTY, StringUtils.EMPTY, -1, latitude, longitude);
+		this(-1, StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY, latitude, longitude);
 	}
 
-	public Team(int rank, String name, String conference, double rpi,
-			double latitude, double longitude) {
+	public Team(int rank, String name, String abbreviation, String conference, double latitude, double longitude) {
 		super(latitude, longitude);
 		this.rank = rank;
 		this.name = name;
-		this.rpi = rpi;
+		this.abbreviation = abbreviation;
 		this.conference = conference;
 	}
 
@@ -36,20 +38,12 @@ public class Team extends LatLng {
 		this.name = name;
 	}
 
-	public double getRpi() {
-		return rpi;
+	public String getAbbreviation() {
+		return abbreviation;
 	}
 
-	public void setRpi(double rpi) {
-		this.rpi = rpi;
-	}
-
-	public double getSos() {
-		return sos;
-	}
-
-	public void setSos(double sos) {
-		this.sos = sos;
+	public void setAbbreviation(String abbreviation) {
+		this.abbreviation = abbreviation;
 	}
 
 	public String getConference() {
@@ -69,7 +63,7 @@ public class Team extends LatLng {
 	}
 
 	public int getExpectedSeed() {
-		int expectedSeed = ((rank - 1) / 4) + 1;
+		int expectedSeed = ((rank - 1) / BracketPlannerUtil.NUM_REGIONS) + 1;
 		return expectedSeed;
 	}
 
@@ -77,20 +71,16 @@ public class Team extends LatLng {
 	 * Object overrides
 	 */
 
-	// public boolean equals(Team o) {
-	// return new EqualsBuilder().append(this.rank, o.rank).append(this.name,
-	// o.name).append(this.rpi, o.rpi)
-	// .append(this.sos, o.sos).append(this.conference,
-	// o.conference).isEquals();
-	// }
-	//
-	// public int hashCode() {
-	// return new
-	// HashCodeBuilder().append(rank).append(name).append(rpi).append(sos).append(conference).hashCode();
-	// }
+	public boolean equals(Team o) {
+		return new EqualsBuilder().append(this.name, o.name).isEquals();
+	}
+
+	public int hashCode() {
+		return new HashCodeBuilder().append(rank).append(name).append(conference).hashCode();
+	}
 
 	public String toString() {
-		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-				.append(name).append(conference).append("Rank", rank).toString();
+		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).append(name).append(conference).append("Rank", rank)
+		        .toString();
 	}
 }

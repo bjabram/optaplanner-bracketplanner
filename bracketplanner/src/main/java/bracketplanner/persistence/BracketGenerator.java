@@ -5,89 +5,110 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import au.com.bytecode.opencsv.CSVReader;
 import bracketplanner.domain.Bracket;
 import bracketplanner.domain.Seeding;
 import bracketplanner.domain.Site;
 import bracketplanner.domain.Team;
-import bracketplanner.util.MarchMadnessUtil;
-
-
+import bracketplanner.util.BracketPlannerUtil;
 public class BracketGenerator {
+	static final Logger log = LoggerFactory.getLogger(BracketGenerator.class);
 
-    public static Bracket generateBracket() {
+	public static Bracket generateBracket() {
 
-        Bracket unsolvedBracket = new Bracket();
+		Bracket unsolvedBracket = new Bracket();
 
-        // Import list of teams
-        List<Team> teamList = new ArrayList<Team>();
-        try {
-            CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(BracketGenerator.class.getClassLoader()
-                    .getResourceAsStream(("teams64.csv")))), ',', '"', 1);
-            String[] nextLine;
-            while ((nextLine = reader.readNext()) != null) {
-                int rank = Integer.parseInt(nextLine[0]);
-                String name = nextLine[1];
-                // String city = nextLine[2];
-                String conference = nextLine[3];
-                double rpi = Double.parseDouble(nextLine[4]);
-                double latitude = Double.parseDouble(nextLine[5]);
-                double longitude = Double.parseDouble(nextLine[6]);
-                teamList.add(new Team(rank, name, conference, rpi, latitude, longitude));
-            }
-            reader.close();
-        } catch (IOException ex) {
-            throw new RuntimeException("Could not read CSV file");
-        }
+		// Import list of teams
+		Map<String, Team> unrankedTeamMap = new TreeMap<String, Team>();
+		try {
+			CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(BracketGenerator.class.getClassLoader()
+			        .getResourceAsStream(("teams-2014.csv")))), ',', '"', 1);
+			String[] nextLine;
+			while ((nextLine = reader.readNext()) != null) {
+				String name = nextLine[4];
+				String abbreviation = nextLine[5];
+				String conference = nextLine[1];
+				double latitude = Double.parseDouble(nextLine[10]);
+				double longitude = Double.parseDouble(nextLine[11]);
+				unrankedTeamMap.put(abbreviation, new Team(-1, name, abbreviation, conference, latitude, longitude));
+			}
+			reader.close();
+		} catch (IOException ex) {
+			throw new RuntimeException("Could not read CSV file");
+		}
 
-        // Create seeds
-        List<Integer> seedList = new ArrayList<Integer>(MarchMadnessUtil.NUM_TEAMS_PER_REGION);
-        for (int i = 1; i <= MarchMadnessUtil.NUM_TEAMS_PER_REGION; i++) {
-            seedList.add(i);
-        }
+		List<Team> rankedTeamList = new ArrayList<Team>();
+		try {
+			CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(BracketGenerator.class.getClassLoader()
+			        .getResourceAsStream(("rankings-2014.csv")))), ',', '"', 1);
+			String[] nextLine;
+			while ((nextLine = reader.readNext()) != null) {
+				int rank = Integer.parseInt(nextLine[0]);
+				String abbreviation = nextLine[2];
+				Team rankedTeam = unrankedTeamMap.get(abbreviation);
+				rankedTeam.setRank(rank);
+				if (rank <= BracketPlannerUtil.NUM_TEAMS)
+					rankedTeamList.add(rankedTeam);
+			}
+			reader.close();
+		} catch (IOException ex) {
+			throw new RuntimeException("Could not read CSV file");
+		}
 
-        // Import list of game sites
-        List<Site> podSiteList = new ArrayList<Site>();
-        List<Site> regionalSiteList = new ArrayList<Site>();
+		// Create seeds
+		List<Integer> seedList = new ArrayList<Integer>(BracketPlannerUtil.NUM_TEAMS_PER_REGION);
+		for (int i = 1; i <= BracketPlannerUtil.NUM_TEAMS_PER_REGION; i++) {
+			seedList.add(i);
+		}
 
-        try {
-            CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(BracketGenerator.class.getClassLoader()
-                    .getResourceAsStream(("sites8.csv")))), ',', '"', 1);
-            String[] nextLine;
-            while ((nextLine = reader.readNext()) != null) {
-                int round = Integer.parseInt(nextLine[0]);
-                String name = nextLine[1];
-                // String city = nextLine[2];
-                String hostTeamname = nextLine[3];
-                double latitude = Double.parseDouble(nextLine[4]);
-                double longitude = Double.parseDouble(nextLine[5]);
-                Site site = new Site(name, round, hostTeamname, latitude, longitude);
-                if (round == 1)
-                    podSiteList.add(site);
-                else if (round == 2)
-                    regionalSiteList.add(site);
-            }
-            reader.close();
-        } catch (IOException ex) {
-            throw new RuntimeException("Could not read CSV file");
-        }
+		// Import list of game sites
+		List<Site> podSiteList = new ArrayList<Site>();
+		List<Site> regionalSiteList = new ArrayList<Site>();
 
-        // Create initial list of seedings
-        List<Seeding> seedingList = new ArrayList<Seeding>(MarchMadnessUtil.NUM_TEAMS);
-        for (int i = 0; i < MarchMadnessUtil.NUM_TEAMS; i++) {
-            Seeding seeding = new Seeding();
-            seeding.setSeed(seedList.get(MarchMadnessUtil.getSeedIndex(i)));
-            seeding.setPod(MarchMadnessUtil.getPodIndex(i) + 1);
-            seeding.setRegionalSite(regionalSiteList.get(MarchMadnessUtil.getRegionIndex(i)));
-            seedingList.add(seeding);
-        }
+		try {
+			CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(BracketGenerator.class.getClassLoader()
+			        .getResourceAsStream(("sites-2014.csv")))), ',', '"', 1);
+			String[] nextLine;
+			while ((nextLine = reader.readNext()) != null) {
+				int round = Integer.parseInt(nextLine[0]);
+				int venueId = Integer.parseInt(nextLine[1]);
+				String name = nextLine[2];
+				String location = nextLine[3];
+				String hostTeamname = nextLine[4];
+				double latitude = Double.parseDouble(nextLine[5]);
+				double longitude = Double.parseDouble(nextLine[6]);
+				Site site = new Site(name, location, round, hostTeamname, venueId, latitude, longitude);
+				if (round == 1)
+					podSiteList.add(site);
+				else if (round == 2)
+					regionalSiteList.add(site);
+			}
+			reader.close();
+		} catch (IOException ex) {
+			throw new RuntimeException("Could not read CSV file");
+		}
 
-        unsolvedBracket.setTeams(teamList);
-        unsolvedBracket.setSeeds(seedList);
-        unsolvedBracket.setSites(podSiteList);
-        unsolvedBracket.setSeedings(seedingList);
+		// Create initial list of seedings
+		List<Seeding> seedingList = new ArrayList<Seeding>(BracketPlannerUtil.NUM_TEAMS);
+		for (int i = 0; i < BracketPlannerUtil.NUM_TEAMS; i++) {
+			Seeding seeding = new Seeding();
+			seeding.setSeed(seedList.get(BracketPlannerUtil.getSeedIndex(i)));
+			seeding.setPod(BracketPlannerUtil.getPodIndex(i) + 1);
+			seeding.setRegionalSite(regionalSiteList.get(BracketPlannerUtil.getRegionIndex(i)));
+			seedingList.add(seeding);
+		}
 
-        return unsolvedBracket;
-    }
+		unsolvedBracket.setTeams(rankedTeamList);
+		unsolvedBracket.setSeeds(seedList);
+		unsolvedBracket.setSites(podSiteList);
+		unsolvedBracket.setSeedings(seedingList);
+
+		return unsolvedBracket;
+	}
 }

@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solver>
-	<!-- FAST_ASSERT, FULL_ASSERT, REPRODUCIBLE, PRODUCTION -->
-	<environmentMode>FAST_ASSERT</environmentMode>
+  <!-- FAST_ASSERT, FULL_ASSERT, REPRODUCIBLE, PRODUCTION -->
+  <environmentMode>FAST_ASSERT</environmentMode>
 
-	<!-- Domain model configuration -->
-	<solutionClass>bracketplanner.domain.Bracket</solutionClass>
-	<planningEntityClass>bracketplanner.domain.Seeding</planningEntityClass>
+  <!-- Domain model configuration -->
+  <solutionClass>bracketplanner.domain.Bracket</solutionClass>
+  <planningEntityClass>bracketplanner.domain.Seeding</planningEntityClass>
 
-	<!-- Score configuration -->
-	<scoreDirectorFactory>
-		<scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
-		<scoreDrl>/bracketplannerScoreRules.drl</scoreDrl>
-	</scoreDirectorFactory>
+  <!-- Score configuration -->
+  <scoreDirectorFactory>
+    <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+    <scoreDrl>/bracketplannerScoreRules.drl</scoreDrl>
+  </scoreDirectorFactory>
 
-	<!-- Optimization algorithms configuration -->
-	<constructionHeuristic>
-		<!-- FIRST_FIT, FIRST_FIT_DECREASING, BEST_FIT, BEST_FIT_DECREASING -->
-		<constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
-		<constructionHeuristicPickEarlyType>FIRST_LAST_STEP_SCORE_EQUAL_OR_IMPROVING</constructionHeuristicPickEarlyType>
-	</constructionHeuristic>
-	<localSearch>
-		<termination>
-			<!-- <maximumSecondsSpend>30</maximumSecondsSpend> -->
-			<maximumUnimprovedStepCount>10</maximumUnimprovedStepCount>
-		</termination>
-		<unionMoveSelector>
-			<swapMoveSelector>
-				<variableNameInclude>team</variableNameInclude>
-			</swapMoveSelector>
-			<pillarSwapMoveSelector>
-				<variableNameInclude>podSite</variableNameInclude>
-			</pillarSwapMoveSelector>
-		</unionMoveSelector>
-		<acceptor>
-			<!--<planningEntityTabuSize>7</planningEntityTabuSize>-->
-			<solutionTabuSize>987</solutionTabuSize>
-			<moveTabuSize>7</moveTabuSize>
-		</acceptor>
-		<forager>
-			<minimalAcceptedSelection>500</minimalAcceptedSelection>
-		</forager>
-	</localSearch>
-
+  <!-- Optimization algorithms configuration -->
+  <constructionHeuristic>
+    <!-- FIRST_FIT, FIRST_FIT_DECREASING, BEST_FIT, BEST_FIT_DECREASING -->
+    <constructionHeuristicType>FIRST_FIT</constructionHeuristicType>
+    <forager>
+      <pickEarlyType>FIRST_NON_DETERIORATING_SCORE</pickEarlyType>
+    </forager>
+  </constructionHeuristic>
+  <localSearch>
+    <termination>
+      <!-- <maximumSecondsSpend>30</maximumSecondsSpend> -->
+      <maximumUnimprovedStepCount>300</maximumUnimprovedStepCount>
+    </termination>
+    <unionMoveSelector>
+      <swapMoveSelector>
+        <variableNameInclude>team</variableNameInclude>
+      </swapMoveSelector>
+      <pillarSwapMoveSelector>
+        <variableNameInclude>podSite</variableNameInclude>
+      </pillarSwapMoveSelector>
+    </unionMoveSelector>
+    <acceptor>
+      <!-- <planningEntityTabuSize>7</planningEntityTabuSize> -->
+      <solutionTabuSize>987</solutionTabuSize>
+      <moveTabuSize>7</moveTabuSize>
+    </acceptor>
+    <forager>
+      <acceptedCountLimit>500</acceptedCountLimit>
+    </forager>
+  </localSearch>
 </solver>

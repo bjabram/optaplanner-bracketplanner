@@ -8,7 +8,6 @@ import bracketplanner.domain.Seeding;
 
 public class DifferentTeamSiteSwapMoveFilter implements SelectionFilter<SwapMove> {
 
-    @Override
     public boolean accept(ScoreDirector scoreDirector, SwapMove selection) {
         Seeding leftSeeding = (Seeding) selection.getLeftEntity();
         Seeding rightSeeding = (Seeding) selection.getRightEntity();

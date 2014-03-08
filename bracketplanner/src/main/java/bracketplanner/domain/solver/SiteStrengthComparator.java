@@ -3,23 +3,20 @@ package bracketplanner.domain.solver;
 import java.io.Serializable;
 import java.util.Comparator;
 
-import org.apache.commons.lang.builder.CompareToBuilder;
-
 import bracketplanner.domain.Site;
 
 import com.javadocmd.simplelatlng.LatLng;
-import com.javadocmd.simplelatlng.LatLngTool;
-import com.javadocmd.simplelatlng.util.LengthUnit;
 
 public class SiteStrengthComparator implements Comparator<Site>, Serializable {
 
-    private static final long serialVersionUID = -6750248009184878616L;
-    public static final LatLng US_CENTER_GEOGRAPHIC = new LatLng(39.8282, -98.5795);
-    public static final LatLng US_CENTER_POPULATION = new LatLng(37.6970, -91.8096);
+	private static final long serialVersionUID = -6750248009184878616L;
+	public static final LatLng US_CENTER_GEOGRAPHIC = new LatLng(39.8282, -98.5795);
+	public static final LatLng US_CENTER_POPULATION = new LatLng(37.6970, -91.8096);
 
-    @Override
-    public int compare(Site site1, Site site2) {
-        return new CompareToBuilder().append(LatLngTool.distance(site2, US_CENTER_GEOGRAPHIC, LengthUnit.MILE),
-                LatLngTool.distance(site1, US_CENTER_GEOGRAPHIC, LengthUnit.MILE)).toComparison(); // descending
-    }
+	public int compare(Site site1, Site site2) {
+		return 0;
+		// return new CompareToBuilder().append(LatLngTool.distance(site2,
+		// US_CENTER_GEOGRAPHIC, LengthUnit.MILE), LatLngTool.distance(site1,
+		// US_CENTER_GEOGRAPHIC, LengthUnit.MILE)).toComparison(); // descending
+	}
 }
