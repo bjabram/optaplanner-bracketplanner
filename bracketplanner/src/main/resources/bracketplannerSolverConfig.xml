@@ -9,7 +9,7 @@
 
   <!-- Score configuration -->
   <scoreDirectorFactory>
-    <scoreDefinitionType>HARD_SOFT</scoreDefinitionType>
+    <scoreDefinitionType>HARD_MEDIUM_SOFT</scoreDefinitionType>
     <scoreDrl>/bracketplannerScoreRules.drl</scoreDrl>
   </scoreDirectorFactory>
 
@@ -24,7 +24,7 @@
   <localSearch>
     <termination>
       <!-- <maximumSecondsSpend>30</maximumSecondsSpend> -->
-      <maximumUnimprovedStepCount>300</maximumUnimprovedStepCount>
+      <maximumUnimprovedStepCount>30</maximumUnimprovedStepCount>
     </termination>
     <unionMoveSelector>
       <swapMoveSelector>

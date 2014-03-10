@@ -2,14 +2,14 @@ package com.redhat.rhc.marchmadness.solver;
 
 dialect "mvel"
 
-import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScoreHolder
 
 import bracketplanner.domain.Bracket;
 import bracketplanner.domain.Seeding;
 import bracketplanner.domain.Site;
 import bracketplanner.domain.Team;
 
-global HardSoftScoreHolder scoreHolder;
+global HardMediumSoftScoreHolder scoreHolder;
 
 // ############################################################################
 // Hard Rules
@@ -36,13 +36,17 @@ then
     scoreHolder.addHardConstraintMatch(kcontext, -1);
 end
 
+// ############################################################################
+// Medium scores
+// These rules are dictated by the selection committee
+// ############################################################################
 rule "Team cannot play at own host site"
 when
 	$team: Team($name: name)
 	$podSite: Site(hostTeamName == $name)
 	$seeding: Seeding(team == $team, podSite == $podSite)
 then
-    scoreHolder.addHardConstraintMatch(kcontext, -1);
+    scoreHolder.addMediumConstraintMatch(kcontext, -1);
 end
 
 rule "Team cannot play at own regional site"
@@ -50,7 +54,7 @@ when
 	$team: Team($name: name)
 	$seeding: Seeding(team == $team, regionalSite.hostTeamName == $name)
 then
-    scoreHolder.addHardConstraintMatch(kcontext, -1);
+    scoreHolder.addMediumConstraintMatch(kcontext, -1);
 end
 	
 rule "Teams in same conference cannot play in first round"
@@ -60,20 +64,24 @@ when
 	$seedingA: Seeding(team == $teamA, $seedA: seed, $site: podSite)
 	$seedingB: Seeding(team == $teamB, seed == 17 - $seedA, podSite == $site)
 then
-    scoreHolder.addHardConstraintMatch(kcontext, -1);
+    scoreHolder.addMediumConstraintMatch(kcontext, -1);
 end
+
+//rule "Top three teams in conference play in separate regions"
+//when
+//	$teamA: Team($conference: conference, rankInConference <= 3)
+//	$teamB: Team(conference == $conference, rankInConference <= 3, this != $teamA)
+//	$seedingA: Seeding(team == $teamA, $regionalSite: regionalSite)
+//	$seedingB: Seeding(team == $teamB, regionalSite == $regionalSite)
+//then
+//    scoreHolder.addMediumConstraintMatch(kcontext, -1)
+//end
+
 
 // ############################################################################
 // Soft scores
+// These rules tune the final bracket for optimization
 // ############################################################################
-
-rule "Team distance from expected seed"
-when
-	$team : Team($expectedSeed: expectedSeed)
-	$seeding : Seeding(team == $team, $actualSeed: seed)
-then
-    scoreHolder.addSoftConstraintMatch(kcontext, -500 * Math.abs(Math.pow($expectedSeed - $actualSeed, 3)))
-end
 
 rule "Team distance from pod site"
 when
@@ -90,4 +98,13 @@ when
 	$seeding: Seeding(team == $team, $seed: seed, $regionalSite: regionalSite, $distance: distanceToRegionalSite)
 then
     scoreHolder.addSoftConstraintMatch(kcontext, -2 * $distance);
+end
+
+// Okay if 8 becomes a 9 seed, but not if 1 becomes a 2 seed
+rule "Team distance from expected seed"
+when
+	$team : Team($expectedSeed: expectedSeed)
+	$seeding : Seeding(team == $team, $actualSeed: seed)
+then
+    scoreHolder.addSoftConstraintMatch(kcontext, -200 * (Math.abs($expectedSeed - 10)) * Math.pow($expectedSeed - $actualSeed, 2));
 end

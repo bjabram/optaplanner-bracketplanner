@@ -17,6 +17,7 @@ public class Team extends LatLng {
 	private String name;
 	private String abbreviation;
 	private String conference;
+	private int rankInConference;
 
 	public Team(double latitude, double longitude) {
 		this(-1, StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY, latitude, longitude);
@@ -52,6 +53,14 @@ public class Team extends LatLng {
 
 	public void setConference(String conference) {
 		this.conference = conference;
+	}
+
+	public int getRankInConference() {
+		return rankInConference;
+	}
+
+	public void setRankInConference(int rankInConference) {
+		this.rankInConference = rankInConference;
 	}
 
 	public int getRank() {

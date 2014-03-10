@@ -7,11 +7,11 @@ import java.util.List;
 import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
 import org.optaplanner.core.api.domain.solution.PlanningSolution;
 import org.optaplanner.core.api.domain.value.ValueRangeProvider;
-import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
 import org.optaplanner.core.impl.solution.Solution;
 
 @PlanningSolution
-public class Bracket implements Solution<HardSoftScore> {
+public class Bracket implements Solution<HardMediumSoftScore> {
 
 	private List<Team> teams;
 	private List<Integer> seeds;
@@ -20,7 +20,7 @@ public class Bracket implements Solution<HardSoftScore> {
 	// private Site finalSite;
 	private List<Seeding> seedings;
 
-	private HardSoftScore score;
+	private HardMediumSoftScore score;
 
 	@ValueRangeProvider(id = "teamList")
 	public List<Team> getTeams() {
@@ -82,11 +82,11 @@ public class Bracket implements Solution<HardSoftScore> {
 		return facts;
 	}
 
-	public HardSoftScore getScore() {
+	public HardMediumSoftScore getScore() {
 		return score;
 	}
 
-	public void setScore(HardSoftScore arg0) {
+	public void setScore(HardMediumSoftScore arg0) {
 		this.score = arg0;
 	}
 

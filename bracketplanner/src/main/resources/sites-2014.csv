@@ -1,13 +1,13 @@
 Round,VenueId,Name,Location,Host,Latitude,Longitude
-1,-1,First Niagara Center,"Buffalo, N.Y.",Metro Atlantic Athletic Conference,42.8864468,-78.8783689
-1,2099,BMO Harris Bradley Center,"Milwaukee, Wis.",Marquette,43.0349931,-87.922497
-1,-1,Amway Center,"Orlando, Fla.",Stetson,28.5421175,-81.3790462
-1,-1,Spokane Veterans Mem. Arena,"Spokane, Wash.",Washington State,47.6588603,-117.4247134
-1,999,PNC Arena,"Raleigh, N.C.",NC State,35.7804015,-78.6390779
-1,-1,AT&T Center,"San Antonio, Texas",Texas-San Antonio,29.4246002,-98.4951405
+1,10001,First Niagara Center,"Buffalo, NY",Metro Atlantic Athletic Conference,42.8864468,-78.8783689
+1,2099,BMO Harris Bradley Center,"Milwaukee, WI",Marquette,43.0349931,-87.922497
+1,10002,Amway Center,"Orlando, FL",Stetson,28.5421175,-81.3790462
+1,10003,Spokane Veterans Mem. Arena,"Spokane, WA",Washington State,47.6588603,-117.4247134
+1,999,PNC Arena,"Raleigh, NC",North Carolina State,35.7804015,-78.6390779
+1,10004,AT&T Center,"San Antonio, TX",UTSA,29.4246002,-98.4951405
 1,2111,Viejas Arena,"San Diego, CA",San Diego State,32.7469869,-117.21177
-1,-1,Scottrade Center,"St. Louis, MO",Missouri Valley Conference,38.6337716,-90.2416548
-2,-1,Honda Center,"Anaheim, Calif.",Big West Conference,33.8347516,-117.911732
-2,1392,FedEx Forum,"Memphis, Tenn.",Memphis,35.1490215,-90.0516285
-2,-1,Lucas Oil Stadium,"Indianapolis, IN",Horizon League/IUPUI,39.7683795,-86.1580447
-2,-1,Madison Square Garden,"New York, NY",St. John’s/Big East Conference,40.7305991,-73.9865812
+1,10005,Scottrade Center,"St. Louis, MO",Missouri Valley Conference,38.6337716,-90.2416548
+2,10006,Honda Center,"Anaheim, CA",Big West Conference,33.8347516,-117.911732
+2,1392,FedEx Forum,"Memphis, TN",Memphis,35.1490215,-90.0516285
+2,10007,Lucas Oil Stadium,"Indianapolis, IN",Horizon League/IUPUI,39.7683795,-86.1580447
+2,10008,Madison Square Garden,"New York, NY",St. John’s,40.7305991,-73.9865812
