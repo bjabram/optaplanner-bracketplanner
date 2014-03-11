@@ -36,6 +36,7 @@ then
     scoreHolder.addHardConstraintMatch(kcontext, -1);
 end
 
+
 // ############################################################################
 // Medium scores
 // These rules are dictated by the selection committee
@@ -67,37 +68,49 @@ then
     scoreHolder.addMediumConstraintMatch(kcontext, -1);
 end
 
-//rule "Top three teams in conference play in separate regions"
-//when
-//	$teamA: Team($conference: conference, rankInConference <= 3)
-//	$teamB: Team(conference == $conference, rankInConference <= 3, this != $teamA)
-//	$seedingA: Seeding(team == $teamA, $regionalSite: regionalSite)
-//	$seedingB: Seeding(team == $teamB, regionalSite == $regionalSite)
-//then
-//    scoreHolder.addMediumConstraintMatch(kcontext, -1)
-//end
+rule "Top three teams in conference play in separate regions"
+when
+	$teamA: Team($conference: conference, rankInConference <= 3)
+	$teamB: Team(conference == $conference, rankInConference <= 3, this != $teamA)
+	$seedingA: Seeding(team == $teamA, $regionalSite: regionalSite)
+	$seedingB: Seeding(team == $teamB, regionalSite == $regionalSite)
+then
+    scoreHolder.addMediumConstraintMatch(kcontext, -1)
+end
 
+rule "Top four seeds must be #1 seeds"
+when
+	$team: Team(expectedSeed != 1)
+    Seeding(team == $team, seed == 1)
+then
+    scoreHolder.addMediumConstraintMatch(kcontext, -1)
+end
+	
 
 // ############################################################################
 // Soft scores
 // These rules tune the final bracket for optimization
 // ############################################################################
 
+// Distance is one point per mile away from venue, then multiply by the quadrant of the team
+// to prioritize higher-ranked teams.  For seeds 1-4 multiply by 4 to make it bad for high
+// ranked teams to play further away.
 rule "Team distance from pod site"
 when
-	$team: Team()
+	$team: Team($expectedSeed: expectedSeed)
 	$podSite: Site()
-	$seeding: Seeding(team == $team, podSite == $podSite, $distance: distanceToPodSite)
+	$seeding: Seeding(team == $team, $seed: seed, podSite == $podSite, $distance: distanceToPodSite)
 then
-    scoreHolder.addSoftConstraintMatch(kcontext, -1 * $distance);
+    scoreHolder.addSoftConstraintMatch(kcontext, -1 * $distance * ((17 - $seed) / 4));
 end
 
+// Distance is two points per mile away from venue
 rule "Team distance from regional site"
 when
-	$team: Team()
+	$team: Team($expectedSeed: expectedSeed)
 	$seeding: Seeding(team == $team, $seed: seed, $regionalSite: regionalSite, $distance: distanceToRegionalSite)
 then
-    scoreHolder.addSoftConstraintMatch(kcontext, -2 * $distance);
+    scoreHolder.addSoftConstraintMatch(kcontext, -2 * $distance * ((17 - $seed) / 4));
 end
 
 // Okay if 8 becomes a 9 seed, but not if 1 becomes a 2 seed
@@ -106,5 +119,5 @@ when
 	$team : Team($expectedSeed: expectedSeed)
 	$seeding : Seeding(team == $team, $actualSeed: seed)
 then
-    scoreHolder.addSoftConstraintMatch(kcontext, -200 * (Math.abs($expectedSeed - 10)) * Math.pow($expectedSeed - $actualSeed, 2));
+    scoreHolder.addSoftConstraintMatch(kcontext, -250 * (Math.abs(17 - $actualSeed * 2)) * Math.abs($expectedSeed - $actualSeed));
 end

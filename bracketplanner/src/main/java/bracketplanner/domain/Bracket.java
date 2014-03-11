@@ -13,89 +13,70 @@ import org.optaplanner.core.impl.solution.Solution;
 @PlanningSolution
 public class Bracket implements Solution<HardMediumSoftScore> {
 
-	private List<Team> teams;
-	private List<Integer> seeds;
-	private List<Site> podSites;
-	// private List<Site> regionalSites;
-	// private Site finalSite;
-	private List<Seeding> seedings;
+    private List<Team> teams;
+    private List<Integer> seeds;
+    private List<Site> podSites;
+    private List<Seeding> seedings;
 
-	private HardMediumSoftScore score;
+    private HardMediumSoftScore score;
 
-	@ValueRangeProvider(id = "teamList")
-	public List<Team> getTeams() {
-		return teams;
-	}
+    @ValueRangeProvider(id = "teamList")
+    public List<Team> getTeams() {
+        return teams;
+    }
 
-	public void setTeams(List<Team> teams) {
-		this.teams = teams;
-	}
+    public void setTeams(List<Team> teams) {
+        this.teams = teams;
+    }
 
-	public List<Integer> getSeeds() {
-		return seeds;
-	}
+    public List<Integer> getSeeds() {
+        return seeds;
+    }
 
-	public void setSeeds(List<Integer> seeds) {
-		this.seeds = seeds;
-	}
+    public void setSeeds(List<Integer> seeds) {
+        this.seeds = seeds;
+    }
 
-	@ValueRangeProvider(id = "siteList")
-	public List<Site> getSites() {
-		return podSites;
-	}
+    @ValueRangeProvider(id = "siteList")
+    public List<Site> getSites() {
+        return podSites;
+    }
 
-	public void setSites(List<Site> sites) {
-		this.podSites = sites;
-	}
+    public void setSites(List<Site> sites) {
+        this.podSites = sites;
+    }
 
-	// public List<Site> getRegionalSites() {
-	// return regionalSites;
-	// }
+    @PlanningEntityCollectionProperty
+    public List<Seeding> getSeedings() {
+        return seedings;
+    }
 
-	// public void setRegionalSites(List<Site> regionalSites) {
-	// this.regionalSites = regionalSites;
-	// }
+    public void setSeedings(List<Seeding> seedings) {
+        this.seedings = seedings;
+    }
 
-	// public Site getFinalSite() {
-	// return finalSite;
-	// }
+    public Collection<? extends Object> getProblemFacts() {
+        List<Object> facts = new ArrayList<Object>();
+        facts.addAll(teams);
+        facts.addAll(seeds);
+        facts.addAll(podSites);
+        return facts;
+    }
 
-	// public void setFinalSite(Site finalSite) {
-	// this.finalSite = finalSite;
-	// }
+    public HardMediumSoftScore getScore() {
+        return score;
+    }
 
-	@PlanningEntityCollectionProperty
-	public List<Seeding> getSeedings() {
-		return seedings;
-	}
+    public void setScore(HardMediumSoftScore arg0) {
+        this.score = arg0;
+    }
 
-	public void setSeedings(List<Seeding> seedings) {
-		this.seedings = seedings;
-	}
-
-	public Collection<? extends Object> getProblemFacts() {
-		List<Object> facts = new ArrayList<Object>();
-		facts.addAll(teams);
-		facts.addAll(seeds);
-		facts.addAll(podSites);
-		// facts.addAll(regionalSites);
-		return facts;
-	}
-
-	public HardMediumSoftScore getScore() {
-		return score;
-	}
-
-	public void setScore(HardMediumSoftScore arg0) {
-		this.score = arg0;
-	}
-
-	public String toString() {
-		StringBuffer sb = new StringBuffer();
-		sb.append("\n");
-		for (Seeding seeding : seedings) {
-			sb.append(seeding.toString() + "\n");
-		}
-		return sb.toString();
-	}
+    public String toString() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("\n");
+        for (Seeding seeding : seedings) {
+            sb.append(seeding.toString() + "\n");
+        }
+        return sb.toString();
+    }
 }
