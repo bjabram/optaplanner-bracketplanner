@@ -1,0 +1,14 @@
+Round,VenueID,Venue,Location,Host,Latitude,Longitude
+0,1,UD Arena,Dayton OH,Dayton,39.75895,-84.1916
+1,2,Dunkin Donuts Center,Providence RI,Providence,41.82399,-71.4128
+1,3,Wells Fargo Arena,Des Moines IA,Iowa State,41.59106,-93.6037
+1,4,PNC Arena,Raleigh NC,North Carolina State,35.7804,-78.6391
+1,5,Pepsi Center,Denver CO,Mountain West,39.73484,-104.965
+1,6,Barclays Center,Brooklyn NY,Atlantic 10,40.6501,-73.9496
+1,7,Scottrade Center,St. Louis MO,Missouri Valley,38.62727,-90.1979
+1,8,Chesapeake Energy Arena,Oklahoma City OK,Big 12,35.47299,-97.5171
+1,9,Spokane Veterans Memorial Arena,Spokane WA,Idaho,47.65886,-117.425
+2,10,Honda Center,Anaheim CA,Big West,33.83475,-117.912
+2,11,KFC YUM! Center,Louisville KY,Louisville,38.25424,-85.7594
+2,12,United Center,Chicago IL,Big Ten,41.87555,-87.6244
+2,13,Wells Fargo Center,Philadelphia PA,La Salle,39.9524,-75.1636

@@ -43,7 +43,7 @@ public class BracketPlannerUtil {
 	/**
 	 * Returns the zero-indexed distance from the median of the pool. This is
 	 * used to determine difficulty in seeding two different teams; a team
-	 * farther away from the media has a differing difficulty than a team near
+	 * further away from the median has a differing difficulty than a team near
 	 * the median.
 	 * 
 	 * @param rank
@@ -71,4 +71,45 @@ public class BracketPlannerUtil {
 		return group % 2 == 0 ? rankInGroup : (groupSize - 1) - rankInGroup;
 	}
 
+	/**
+	 * Returns the round in which two teams of the given ranks would play
+	 * 
+	 * @param rankA
+	 *            the regional rank of the first team
+	 * @param rankB
+	 *            the regional rank of the second team
+	 * @return The round in which the two teams of the given ranks are to play.
+	 *         Team playing at the beginning of the tournament would return 1,
+	 *         with the next round matchup 2 and so on For example,
+	 *         getRoundMatchup(1, 16) would return 1 (assuming 16 teams in the
+	 *         region), and getRoundMatchup(3, 15) would return 4 since those
+	 *         two teams would play in the fourth round of the tournament.
+	 */
+	public static int getRoundMatchup(int rankA, int rankB) {
+		return getRoundMatchup(rankA, rankB, NUM_TEAMS_PER_REGION);
+	}
+
+	/**
+	 * Helper method for
+	 * 
+	 * @param rankA
+	 *            the regional rank of the first team
+	 * @param rankB
+	 *            the regional rank of the second team
+	 * @param numTeams
+	 *            the number of teams to be considered
+	 * @return 0 if the ranks are the same (base case) or a recursive call back
+	 *         into the helper method to calculate the next round of playing
+	 */
+	public static int getRoundMatchup(int rankA, int rankB, int numTeams) {
+		if (rankA <= 0 || rankB <= 0 || rankA > numTeams || rankB > numTeams) {
+			// throw new Exception();
+		}
+		if (rankA == rankB) {
+			return 0;
+		} else {
+			return 1 + getRoundMatchup(Math.min(rankA, numTeams - rankA + 1),
+					Math.min(rankB, numTeams - rankB + 1), numTeams / 2);
+		}
+	}
 }
