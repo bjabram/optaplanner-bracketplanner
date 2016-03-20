@@ -1,5 +1,8 @@
 package bracketplanner.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
@@ -9,12 +12,13 @@ import org.slf4j.LoggerFactory;
 
 import bracketplanner.domain.solver.SiteStrengthComparator;
 import bracketplanner.domain.solver.TeamStrengthComparator;
+import bracketplanner.util.BracketPlannerUtil;
 
 import com.javadocmd.simplelatlng.LatLngTool;
 import com.javadocmd.simplelatlng.util.LengthUnit;
 
 @PlanningEntity()
-public class Seeding {
+public class Seeding extends Matchup {
     protected final transient Logger log = LoggerFactory.getLogger(this.getClass());
     static final int MINIMUM_DISTANCE = 100;
 
@@ -88,6 +92,20 @@ public class Seeding {
         return Math.max(distance, MINIMUM_DISTANCE);
     }
 
+    public int getRoundMatchup(Seeding seeding) {
+        int finalFourRound = 5;
+        if (this.getRegionalSite() != seeding.getRegionalSite()) {
+            return finalFourRound;
+        } else
+            return BracketPlannerUtil.getRoundMatchup(this.getSeed(), seeding.getSeed());
+    }
+    
+    public Set<Team> getTeams() {
+        Set<Team> teams = new HashSet<Team>();
+        teams.add(team);
+        return teams;
+    }
+
     public Seeding clone() {
         Seeding seeding = new Seeding();
         seeding.team = team;
@@ -102,13 +120,10 @@ public class Seeding {
      */
 
     /*
-     * public boolean equals(Seeding o) { return new
-     * EqualsBuilder().append(this.id, o.id).append(this.team,
-     * o.team).append(this.seed, o.seed) .append(this.podSite,
-     * o.podSite).append(this.regionalSite, o.regionalSite).isEquals(); }
+     * public boolean equals(Seeding o) { return new EqualsBuilder().append(this.id, o.id).append(this.team,
+     * o.team).append(this.seed, o.seed) .append(this.podSite, o.podSite).append(this.regionalSite, o.regionalSite).isEquals(); }
      * 
-     * public int hashCode() { return new
-     * HashCodeBuilder().append(id).append(team
+     * public int hashCode() { return new HashCodeBuilder().append(id).append(team
      * ).append(seed).append(podSite).append(regionalSite).hashCode(); }
      */
     public String toString() {

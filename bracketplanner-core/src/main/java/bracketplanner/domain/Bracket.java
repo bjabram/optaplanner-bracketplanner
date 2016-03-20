@@ -17,6 +17,7 @@ public class Bracket implements Solution<HardMediumSoftScore> {
     private List<Integer> seeds;
     private List<Site> podSites;
     private List<Seeding> seedings;
+    private List<Game> games;
 
     private HardMediumSoftScore score;
 
@@ -55,11 +56,20 @@ public class Bracket implements Solution<HardMediumSoftScore> {
         this.seedings = seedings;
     }
 
+    public List<Game> getGames() {
+        return games;
+    }
+
+    public void setGames(List<Game> games) {
+        this.games = games;
+    }
+
     public Collection<? extends Object> getProblemFacts() {
         List<Object> facts = new ArrayList<Object>();
         facts.addAll(teams);
         facts.addAll(seeds);
         facts.addAll(podSites);
+        facts.addAll(games);
         return facts;
     }
 
@@ -67,8 +77,8 @@ public class Bracket implements Solution<HardMediumSoftScore> {
         return score;
     }
 
-    public void setScore(HardMediumSoftScore arg0) {
-        this.score = arg0;
+    public void setScore(HardMediumSoftScore score) {
+        this.score = score;
     }
 
     public String toString() {

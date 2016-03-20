@@ -8,6 +8,7 @@ import bracketplanner.domain.Bracket;
 import bracketplanner.domain.Seeding;
 import bracketplanner.domain.Site;
 import bracketplanner.domain.Team;
+import bracketplanner.domain.Game;
 
 global HardMediumSoftScoreHolder scoreHolder;
 
@@ -41,6 +42,80 @@ end
 // Medium scores
 // These rules are dictated by the selection committee
 // ############################################################################
+
+rule "Teams in same conference cannot play in first round"
+when
+	$teamA: Team($conference: conference)
+	$teamB: Team(conference == $conference, this != $teamA)
+	$seedingA: Seeding(team == $teamA, $seedA: seed, $site: podSite)
+	$seedingB: Seeding(team == $teamB, seed == 17 - $seedA, podSite == $site)
+then
+    scoreHolder.addMediumConstraintMatch(kcontext, -1);
+end
+
+rule "Top four seeds must be #1 seeds"
+when
+	$team: Team(expectedSeed != 1)
+    Seeding(team == $team, seed == 1)
+then
+    scoreHolder.addMediumConstraintMatch(kcontext, -1)
+end
+
+// From http://www.ncaa.com/news/basketball-men/article/2016-03-13/march-madness-bracket-how-68-teams-are-selected-division-i
+
+//Each of the first four teams selected from a conference shall be placed in different regions if they are seeded on the first four lines.
+rule "Cannot have two top-four teams from same conference in same region"
+when
+	$teamA: Team($conference: conference, rankInConference <= 4)
+	$teamB: Team(conference == $conference, rankInConference <= 4, this != $teamA)
+	$seedingA: Seeding(team == $teamA, $regionalSite: regionalSite)
+	$seedingB: Seeding(team == $teamB, regionalSite == $regionalSite)
+then
+    scoreHolder.addMediumConstraintMatch(kcontext, -1)
+end
+
+// Teams from the same conference shall not meet prior to the regional final
+// if they played each other three or more times during the regular season and conference tournament.
+rule "Can't play before regional finals if played three or more times"
+when
+	$teamA: Team($conference: conference)
+	$teamB: Team(this != $teamA, conference == $conference)
+	//$seedingA: Seeding(team == $teamA)
+	//$seedingB: Seeding(roundMatchup <= 3)
+	$gamesPlayed: Number(intValue >= 3)
+		from accumulate($game: Game(team1 == $teamA, team2 == $teamB), count($game))
+then
+    scoreHolder.addMediumConstraintMatch(kcontext, -1)
+end
+
+
+// Teams from the same conference shall not meet prior to the regional semifinals
+// if they played each other twice during the regular season and conference tournament.
+
+// Teams from the same conference may play each other as early as the second round
+// if they played no more than once during the regular season and conference tournament.
+
+// Any principle can be relaxed if two or more teams from the same conference
+// are among the last four at-large seeded teams participating in the First Four.
+
+// The committee shall not place teams seeded on the first four lines
+// at a potential “home-crowd disadvantage” in the first round.
+// Using following heuristic: top four team is more than 150 miles away from pod site
+// and opponent is less than 75 miles
+//rule "home crowd disadvantage"
+//when
+//	$teamA: Team()
+//	$teamB: Team(this != $teamA)
+//	Seeding(team == $teamA, $seed: seed <= 4, $podSite: podSite, distanceToPodSite > 150)
+//	Seeding(team == $teamB, seed == 17 - $seed, podSite == $podSite, distanceToPodSite < 75)
+//then
+    //scoreHolder.addMediumConstraintMatch(kcontext, -1);
+//end
+
+// A team will not be permitted to play in any facility
+// in which it has played more than three games during its season,
+
+// A host institution’s team shall not be permitted to play at the site where the institution is hosting.
 rule "Team cannot play at own host site"
 when
 	$team: Team($name: name)
@@ -57,35 +132,26 @@ when
 then
     scoreHolder.addMediumConstraintMatch(kcontext, -1);
 end
-	
-rule "Teams in same conference cannot play in first round"
-when
-	$teamA: Team($conference: conference)
-	$teamB: Team(conference == $conference, this != $teamA)
-	$seedingA: Seeding(team == $teamA, $seedA: seed, $site: podSite)
-	$seedingB: Seeding(team == $teamB, seed == 17 - $seedA, podSite == $site)
-then
-    scoreHolder.addMediumConstraintMatch(kcontext, -1);
-end
 
-rule "Top three teams in conference play in separate regions"
-when
-	$teamA: Team($conference: conference, rankInConference <= 3)
-	$teamB: Team(conference == $conference, rankInConference <= 3, this != $teamA)
-	$seedingA: Seeding(team == $teamA, $regionalSite: regionalSite)
-	$seedingB: Seeding(team == $teamB, regionalSite == $regionalSite)
-then
-    scoreHolder.addMediumConstraintMatch(kcontext, -1)
-end
 
-rule "Top four seeds must be #1 seeds"
-when
-	$team: Team(expectedSeed != 1)
-    Seeding(team == $team, seed == 1)
-then
-    scoreHolder.addMediumConstraintMatch(kcontext, -1)
-end
-	
+
+// A team may be moved up or down one (or in extraordinary circumstances)
+// two lines from its true seed line
+
+
+// The committee will review the relative strengths of the regions
+// by adding the “true seed” numbers in each region to determine
+// if any severe numerical imbalance exists.
+// Generally, no more than five points should separate the lowest and highest total.
+
+// If possible, rematches of non-conference regular-season games
+// should be avoided in the First Four and first round.
+
+// If possible, after examining the previous two years’ brackets, teams or conferences
+// will not be moved out of its natural region or geographic area an inordinate number of times.
+
+// If possible, rematches from the previous two tournaments should be avoided in the first round.
+
 
 // ############################################################################
 // Soft scores
@@ -121,3 +187,4 @@ when
 then
     scoreHolder.addSoftConstraintMatch(kcontext, -250 * (Math.abs(17 - $actualSeed * 2)) * Math.abs($expectedSeed - $actualSeed));
 end
+

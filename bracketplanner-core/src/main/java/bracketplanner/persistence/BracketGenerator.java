@@ -13,6 +13,8 @@ import org.slf4j.LoggerFactory;
 
 import au.com.bytecode.opencsv.CSVReader;
 import bracketplanner.domain.Bracket;
+import bracketplanner.domain.Game;
+import bracketplanner.domain.Matchup;
 import bracketplanner.domain.Seeding;
 import bracketplanner.domain.Site;
 import bracketplanner.domain.Team;
@@ -24,26 +26,29 @@ import bracketplanner.util.BracketPlannerUtil;
  */
 public class BracketGenerator {
     static final Logger log = LoggerFactory.getLogger(BracketGenerator.class);
-    static final String TEAMS_FILE_URL = "teams-2014.csv";
-    static final String RANKINGS_FILE_URL = "rankings-2014.csv";
-    static final String SITES_FILE_URL = "sites-2014.csv";
+    static final String TEAMS_FILE_URL = "teams-1516.csv";
+    static final String RANKINGS_FILE_URL = "rankings-1516.csv";
+    static final String SITES_FILE_URL = "venues-1516.csv";
+    static final String GAMES_FILE_URL = "games-1516.csv";
 
     public static Bracket generateBracket() {
 
         Bracket unsolvedBracket = new Bracket();
+        int skipLines = 1;
 
         // Import list of teams
         Map<String, Team> unrankedTeamMap = new HashMap<String, Team>();
         try {
             CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(BracketGenerator.class.getClassLoader()
-                    .getResourceAsStream((TEAMS_FILE_URL)))), ',', '"', 1);
+                    .getResourceAsStream((TEAMS_FILE_URL)))), CSVReader.DEFAULT_SEPARATOR, CSVReader.DEFAULT_QUOTE_CHARACTER,
+                    skipLines);
             String[] nextLine;
             while ((nextLine = reader.readNext()) != null) {
-                String name = nextLine[4];
-                String abbreviation = nextLine[5];
-                String conference = nextLine[1];
-                double latitude = Double.parseDouble(nextLine[10]);
-                double longitude = Double.parseDouble(nextLine[11]);
+                String name = nextLine[0];
+                String abbreviation = nextLine[0];
+                String conference = nextLine[6];
+                double latitude = Double.parseDouble(nextLine[4]);
+                double longitude = Double.parseDouble(nextLine[5]);
                 unrankedTeamMap.put(abbreviation, new Team(-1, name, abbreviation, conference, latitude, longitude));
             }
             reader.close();
@@ -51,15 +56,17 @@ public class BracketGenerator {
             throw new RuntimeException("Could not read CSV file");
         }
 
+        // Import rankings
         Map<String, Integer> teamsInConference = new HashMap<String, Integer>();
         List<Team> rankedTeamList = new ArrayList<Team>();
         try {
             CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(BracketGenerator.class.getClassLoader()
-                    .getResourceAsStream((RANKINGS_FILE_URL)))), ',', '"', 1);
+                    .getResourceAsStream((RANKINGS_FILE_URL)))), CSVReader.DEFAULT_SEPARATOR, CSVReader.DEFAULT_QUOTE_CHARACTER,
+                    skipLines);
             String[] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 int rank = Integer.parseInt(nextLine[0]);
-                String abbreviation = nextLine[2];
+                String abbreviation = nextLine[1];
                 Team rankedTeam = unrankedTeamMap.get(abbreviation);
 
                 // calculate ranking within conference
@@ -91,7 +98,8 @@ public class BracketGenerator {
 
         try {
             CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(BracketGenerator.class.getClassLoader()
-                    .getResourceAsStream((SITES_FILE_URL)))), ',', '"', 1);
+                    .getResourceAsStream((SITES_FILE_URL)))), CSVReader.DEFAULT_SEPARATOR, CSVReader.DEFAULT_QUOTE_CHARACTER,
+                    skipLines);
             String[] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 int round = Integer.parseInt(nextLine[0]);
@@ -104,10 +112,33 @@ public class BracketGenerator {
                 Site site = new Site(name, location, round, hostTeamname, venueId, latitude, longitude);
                 if (round == 1)
                     podSiteList.add(site);
-                else if (round == 2)
+                if (round == 2)
                     regionalSiteList.add(site);
             }
             reader.close();
+        } catch (IOException ex) {
+            throw new RuntimeException("Could not read CSV file");
+        }
+
+        // Import list of games
+        List<Game> gameList = new ArrayList<Game>();
+
+        try {
+            CSVReader reader = new CSVReader(new BufferedReader(new InputStreamReader(BracketGenerator.class.getClassLoader()
+                    .getResourceAsStream((GAMES_FILE_URL)))), CSVReader.DEFAULT_SEPARATOR, CSVReader.DEFAULT_QUOTE_CHARACTER,
+                    skipLines);
+            String[] nextLine;
+            while ((nextLine = reader.readNext()) != null) {
+                String team1Alias = nextLine[1];
+                String team2Alias = nextLine[2];
+                Team team1 = unrankedTeamMap.get(team1Alias);
+                Team team2 = unrankedTeamMap.get(team2Alias);
+                if (team1 != null && team2 != null) {
+                    gameList.add(new Game(team1, team2));
+                }
+            }
+            reader.close();
+
         } catch (IOException ex) {
             throw new RuntimeException("Could not read CSV file");
         }
@@ -126,6 +157,7 @@ public class BracketGenerator {
         unsolvedBracket.setSeeds(seedList);
         unsolvedBracket.setSites(podSiteList);
         unsolvedBracket.setSeedings(seedingList);
+        unsolvedBracket.setGames(gameList);
 
         return unsolvedBracket;
     }
