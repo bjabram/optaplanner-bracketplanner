@@ -18,7 +18,7 @@ import com.javadocmd.simplelatlng.LatLngTool;
 import com.javadocmd.simplelatlng.util.LengthUnit;
 
 @PlanningEntity()
-public class Seeding extends Matchup {
+public class Seeding {
     protected final transient Logger log = LoggerFactory.getLogger(this.getClass());
     static final int MINIMUM_DISTANCE = 100;
 

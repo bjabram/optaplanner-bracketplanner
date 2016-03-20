@@ -142,6 +142,15 @@ public class BracketGenerator {
         } catch (IOException ex) {
             throw new RuntimeException("Could not read CSV file");
         }
+        
+        List<Matchup> matchupList = new ArrayList<Matchup>();
+        matchupList.add(new Matchup());
+        for(int i = 0; i < 32; i++) {
+            matchupList.get(i).setLeft(new Matchup());
+            matchupList.get(i).setRight(new Matchup());
+            matchupList.add(matchupList.get(i).getLeft());
+            matchupList.add(matchupList.get(i).getRight());
+        }
 
         // Create initial list of seedings
         List<Seeding> seedingList = new ArrayList<Seeding>(BracketPlannerUtil.NUM_TEAMS);
