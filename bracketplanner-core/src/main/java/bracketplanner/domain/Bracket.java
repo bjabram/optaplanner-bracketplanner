@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
 import org.optaplanner.core.api.domain.solution.PlanningSolution;
-import org.optaplanner.core.api.domain.value.ValueRangeProvider;
+import org.optaplanner.core.api.domain.solution.Solution;
+import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.core.api.score.buildin.hardmediumsoft.HardMediumSoftScore;
-import org.optaplanner.core.impl.solution.Solution;
 
 @PlanningSolution
 public class Bracket implements Solution<HardMediumSoftScore> {
