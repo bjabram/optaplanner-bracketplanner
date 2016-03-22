@@ -9,6 +9,7 @@ import bracketplanner.domain.Seeding;
 import bracketplanner.domain.Site;
 import bracketplanner.domain.Team;
 import bracketplanner.domain.Game;
+import bracketplanner.domain.Matchup;
 
 global HardMediumSoftScoreHolder scoreHolder;
 
@@ -53,10 +54,10 @@ then
     scoreHolder.addMediumConstraintMatch(kcontext, -1);
 end
 
-rule "Top four seeds must be #1 seeds"
+rule "Top four seeds must be top four seeds in each region"
 when
-	$team: Team(expectedSeed != 1)
-    Seeding(team == $team, seed == 1)
+	$team: Team($expectedSeed: expectedSeed <= 4)
+    Seeding(team == $team, seed != $expectedSeed)
 then
     scoreHolder.addMediumConstraintMatch(kcontext, -1)
 end
@@ -76,30 +77,48 @@ end
 
 // Teams from the same conference shall not meet prior to the regional final
 // if they played each other three or more times during the regular season and conference tournament.
-rule "Can't play before regional finals if played three or more times"
+rule "Can't play before regional finals if played three or more times in season"
 when
 	$teamA: Team($conference: conference)
 	$teamB: Team(this != $teamA, conference == $conference)
-	//$seedingA: Seeding(team == $teamA)
-	//$seedingB: Seeding(roundMatchup <= 3)
+	$matchup: Matchup(teams contains $teamA, teams contains $teamB, round < 4)
 	$gamesPlayed: Number(intValue >= 3)
-		from accumulate($game: Game(team1 == $teamA, team2 == $teamB), count($game))
+		from accumulate($game: Game(teams contains $teamA, teams contains $teamB), count($game))
 then
     scoreHolder.addMediumConstraintMatch(kcontext, -1)
 end
 
-
 // Teams from the same conference shall not meet prior to the regional semifinals
 // if they played each other twice during the regular season and conference tournament.
+rule "Can't play before regional semifinals if played twice in season"
+when
+	$teamA: Team($conference: conference)
+	$teamB: Team(this != $teamA, conference == $conference)
+	$matchup: Matchup(teams contains $teamA, teams contains $teamB, round < 3)
+	$gamesPlayed: Number(intValue == 2)
+		from accumulate($game: Game(teams contains $teamA, teams contains $teamB), count($game))
+then
+    scoreHolder.addMediumConstraintMatch(kcontext, -1)
+end
 
 // Teams from the same conference may play each other as early as the second round
 // if they played no more than once during the regular season and conference tournament.
+rule "Can't play before second round semifinals if played once in season"
+when
+	$teamA: Team($conference: conference)
+	$teamB: Team(this != $teamA, conference == $conference)
+	$matchup: Matchup(teams contains $teamA, teams contains $teamB, round < 2)
+	$gamesPlayed: Number(intValue == 1)
+		from accumulate($game: Game(teams contains $teamA, teams contains $teamB), count($game))
+then
+    scoreHolder.addMediumConstraintMatch(kcontext, -1)
+end
 
 // Any principle can be relaxed if two or more teams from the same conference
 // are among the last four at-large seeded teams participating in the First Four.
 
 // The committee shall not place teams seeded on the first four lines
-// at a potential “home-crowd disadvantage” in the first round.
+// at a potential "home-crowd disadvantage" in the first round.
 // Using following heuristic: top four team is more than 150 miles away from pod site
 // and opponent is less than 75 miles
 //rule "home crowd disadvantage"
@@ -115,7 +134,7 @@ end
 // A team will not be permitted to play in any facility
 // in which it has played more than three games during its season,
 
-// A host institution’s team shall not be permitted to play at the site where the institution is hosting.
+// A host institution's team shall not be permitted to play at the site where the institution is hosting.
 rule "Team cannot play at own host site"
 when
 	$team: Team($name: name)
@@ -135,19 +154,35 @@ end
 
 
 
-// A team may be moved up or down one (or in extraordinary circumstances)
-// two lines from its true seed line
+// A team may be moved up or down one (or in extraordinary circumstances) two lines from its true seed line
+// Okay if 8 becomes a 9 seed, but not if 1 becomes a 2 seed
+rule "Team cannot be more than two lines from its true seed line"
+when
+	$team: Team($expectedSeed: expectedSeed)
+	$seeding: Seeding(team == $team, Math.abs(seed - $expectedSeed) > 2)
+then
+    scoreHolder.addMediumConstraintMatch(kcontext, -1);
+end
+
+
+rule "Team can be moved up or down two lines from its true seed line in extraordinary circumstances"
+when
+	$team: Team($expectedSeed: expectedSeed)
+	$seeding: Seeding(team == $team, Math.abs(seed - $expectedSeed) == 2)
+then
+    scoreHolder.addSoftConstraintMatch(kcontext, -100000);
+end
 
 
 // The committee will review the relative strengths of the regions
-// by adding the “true seed” numbers in each region to determine
+// by adding the true seed" numbers in each region to determine
 // if any severe numerical imbalance exists.
 // Generally, no more than five points should separate the lowest and highest total.
 
 // If possible, rematches of non-conference regular-season games
 // should be avoided in the First Four and first round.
 
-// If possible, after examining the previous two years’ brackets, teams or conferences
+// If possible, after examining the previous two years' brackets, teams or conferences
 // will not be moved out of its natural region or geographic area an inordinate number of times.
 
 // If possible, rematches from the previous two tournaments should be avoided in the first round.
@@ -178,13 +213,3 @@ when
 then
     scoreHolder.addSoftConstraintMatch(kcontext, -2 * $distance * ((17 - $seed) / 4));
 end
-
-// Okay if 8 becomes a 9 seed, but not if 1 becomes a 2 seed
-rule "Team distance from expected seed"
-when
-	$team : Team($expectedSeed: expectedSeed)
-	$seeding : Seeding(team == $team, $actualSeed: seed)
-then
-    scoreHolder.addSoftConstraintMatch(kcontext, -250 * (Math.abs(17 - $actualSeed * 2)) * Math.abs($expectedSeed - $actualSeed));
-end
-

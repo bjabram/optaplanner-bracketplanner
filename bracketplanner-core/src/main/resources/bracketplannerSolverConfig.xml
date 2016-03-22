@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solver>
 	<!-- FAST_ASSERT, FULL_ASSERT, REPRODUCIBLE, PRODUCTION -->
-	<environmentMode>REPRODUCIBLE</environmentMode>
+	<environmentMode>PRODUCTION</environmentMode>
 
 	<!-- Domain model configuration -->
 	<solutionClass>bracketplanner.domain.Bracket</solutionClass>
@@ -16,13 +16,13 @@
 	<!-- Optimization algorithms configuration -->
 	<constructionHeuristic>
 		<!-- WEAKEST_FIT, STRONGEST_FIT, WEAKEST_FIT_DECREASING, STRONGEST_FIT_DECREASING -->
-		<constructionHeuristicType>WEAKEST_FIT</constructionHeuristicType>
+		<constructionHeuristicType>STRONGEST_FIT</constructionHeuristicType>
 		<!-- <forager> <pickEarlyType>FIRST_NON_DETERIORATING_SCORE</pickEarlyType> </forager> -->
 	</constructionHeuristic>
 	<localSearch>
 		<termination>
-			<!-- <secondsSpentLimit>30</secondsSpentLimit> -->
-			<unimprovedStepCountLimit>30</unimprovedStepCountLimit>
+			<secondsSpentLimit>60</secondsSpentLimit>
+			<!-- <unimprovedStepCountLimit>60</unimprovedStepCountLimit> -->
 		</termination>
 		<unionMoveSelector>
 			<swapMoveSelector>

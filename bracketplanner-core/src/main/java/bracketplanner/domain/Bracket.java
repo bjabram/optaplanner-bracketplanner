@@ -18,6 +18,7 @@ public class Bracket implements Solution<HardMediumSoftScore> {
     private List<Site> podSites;
     private List<Seeding> seedings;
     private List<Game> games;
+    private List<Matchup> matchups;
 
     private HardMediumSoftScore score;
 
@@ -62,6 +63,14 @@ public class Bracket implements Solution<HardMediumSoftScore> {
 
     public void setGames(List<Game> games) {
         this.games = games;
+    }
+
+    public List<Matchup> getMatchups() {
+        return matchups;
+    }
+
+    public void setMatchups(List<Matchup> matchups) {
+        this.matchups = matchups;
     }
 
     public Collection<? extends Object> getProblemFacts() {

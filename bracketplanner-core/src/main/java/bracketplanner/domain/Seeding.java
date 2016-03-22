@@ -12,13 +12,12 @@ import org.slf4j.LoggerFactory;
 
 import bracketplanner.domain.solver.SiteStrengthComparator;
 import bracketplanner.domain.solver.TeamStrengthComparator;
-import bracketplanner.util.BracketPlannerUtil;
 
 import com.javadocmd.simplelatlng.LatLngTool;
 import com.javadocmd.simplelatlng.util.LengthUnit;
 
 @PlanningEntity()
-public class Seeding {
+public class Seeding extends Matchup {
     protected final transient Logger log = LoggerFactory.getLogger(this.getClass());
     static final int MINIMUM_DISTANCE = 100;
 
@@ -28,6 +27,10 @@ public class Seeding {
     private int podNumber;
     private Site podSite;
     private Site regionalSite;
+
+    public Seeding() {
+        super();
+    }
 
     public int getId() {
         return id;
@@ -92,14 +95,11 @@ public class Seeding {
         return Math.max(distance, MINIMUM_DISTANCE);
     }
 
-    public int getRoundMatchup(Seeding seeding) {
-        int finalFourRound = 5;
-        if (this.getRegionalSite() != seeding.getRegionalSite()) {
-            return finalFourRound;
-        } else
-            return BracketPlannerUtil.getRoundMatchup(this.getSeed(), seeding.getSeed());
-    }
-    
+    /*
+     * (non-Javadoc)
+     * 
+     * @see bracketplanner.domain.Matchup#getTeams()
+     */
     public Set<Team> getTeams() {
         Set<Team> teams = new HashSet<Team>();
         teams.add(team);

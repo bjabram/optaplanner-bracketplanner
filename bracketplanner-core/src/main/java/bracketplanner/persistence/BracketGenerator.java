@@ -27,7 +27,7 @@ import bracketplanner.util.BracketPlannerUtil;
 public class BracketGenerator {
     static final Logger log = LoggerFactory.getLogger(BracketGenerator.class);
     static final String TEAMS_FILE_URL = "teams-1516.csv";
-    static final String RANKINGS_FILE_URL = "rankings-1516.csv";
+    static final String RANKINGS_FILE_URL = "rankings64-1516.csv";
     static final String SITES_FILE_URL = "venues-1516.csv";
     static final String GAMES_FILE_URL = "games-1516.csv";
 
@@ -138,18 +138,8 @@ public class BracketGenerator {
                 }
             }
             reader.close();
-
         } catch (IOException ex) {
             throw new RuntimeException("Could not read CSV file");
-        }
-        
-        List<Matchup> matchupList = new ArrayList<Matchup>();
-        matchupList.add(new Matchup());
-        for(int i = 0; i < 32; i++) {
-            matchupList.get(i).setLeft(new Matchup());
-            matchupList.get(i).setRight(new Matchup());
-            matchupList.add(matchupList.get(i).getLeft());
-            matchupList.add(matchupList.get(i).getRight());
         }
 
         // Create initial list of seedings
@@ -162,11 +152,53 @@ public class BracketGenerator {
             seedingList.add(seeding);
         }
 
+        //
+        // Create Matchups - this can be improved dramatically
+        //
+        List<Matchup> matchupList = new ArrayList<Matchup>();
+        int round;
+
+        // first round
+        round = 1;
+        for (int i = 0; i < 32; i++) {
+            matchupList.add(new Matchup(seedingList.get(i), seedingList.get(63 - i), round));
+        }
+
+        // second round
+        round = 2;
+        for (int i = 0; i < 16; i++) {
+            matchupList.add(new Matchup(matchupList.get(0 + i), matchupList.get(0 + (31 - i)), round));
+        }
+
+        // third round
+        round = 3;
+        for (int i = 0; i < 8; i++) {
+            matchupList.add(new Matchup(matchupList.get(32 + i), matchupList.get(32 + (15 - i)), round));
+        }
+
+        // fourth round
+        round = 4;
+        for (int i = 0; i < 4; i++) {
+            matchupList.add(new Matchup(matchupList.get(48 + i), matchupList.get(48 + (7 - i)), round));
+        }
+
+        // fourth round
+        round = 5;
+        for (int i = 0; i < 2; i++) {
+            matchupList.add(new Matchup(matchupList.get(56 + i), matchupList.get(56 + (3 - i)), round));
+        }
+
+        // sixth round
+        round = 6;
+        for (int i = 0; i < 1; i++) {
+            matchupList.add(new Matchup(matchupList.get(60 + i), matchupList.get(60 + (1 - i)), round));
+        }
         unsolvedBracket.setTeams(rankedTeamList);
         unsolvedBracket.setSeeds(seedList);
         unsolvedBracket.setSites(podSiteList);
         unsolvedBracket.setSeedings(seedingList);
         unsolvedBracket.setGames(gameList);
+        unsolvedBracket.setMatchups(matchupList);
 
         return unsolvedBracket;
     }

@@ -39,6 +39,13 @@ public class Matchup {
         return round;
     }
 
+    /**
+     * Recursively returns the teams under this matchup which would include all referenced matchups. The call to the Matchup
+     * corresponding to a first-round matchup would return just the two teams playing. The call to the Matchup corresponding to the
+     * championship game would return all teams since all are available to play at that matchup.
+     * 
+     * @return
+     */
     public Set<Team> getTeams() {
         // Can this be optimized?
         Set<Team> teams = new HashSet<Team>();
