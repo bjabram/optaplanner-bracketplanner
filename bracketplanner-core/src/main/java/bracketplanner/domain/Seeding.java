@@ -10,13 +10,14 @@ import org.optaplanner.core.api.domain.variable.PlanningVariable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import bracketplanner.domain.solver.SeedingDifficultyComparator;
 import bracketplanner.domain.solver.SiteStrengthComparator;
 import bracketplanner.domain.solver.TeamStrengthComparator;
 
 import com.javadocmd.simplelatlng.LatLngTool;
 import com.javadocmd.simplelatlng.util.LengthUnit;
 
-@PlanningEntity()
+@PlanningEntity(difficultyComparatorClass = SeedingDifficultyComparator.class)
 public class Seeding extends Matchup {
     protected final transient Logger log = LoggerFactory.getLogger(this.getClass());
     static final int MINIMUM_DISTANCE = 100;

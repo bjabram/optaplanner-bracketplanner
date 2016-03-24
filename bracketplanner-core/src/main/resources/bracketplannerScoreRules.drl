@@ -155,22 +155,28 @@ end
 
 
 // A team may be moved up or down one (or in extraordinary circumstances) two lines from its true seed line
-// Okay if 8 becomes a 9 seed, but not if 1 becomes a 2 seed
+rule "A team may be moved up or down one line from its true seed line"
+when
+	$team: Team($expectedSeed: expectedSeed)
+	$seeding: Seeding(team == $team, Math.abs(seed - $expectedSeed) == 1)
+then
+    scoreHolder.addSoftConstraintMatch(kcontext, -2000); // 2000 for one line, 40000 for two lines
+end
+
+rule "A team may be moved up or down in extraordinary circumstances two lines from its true seed line"
+when
+	$team: Team($expectedSeed: expectedSeed)
+	$seeding: Seeding(team == $team, Math.abs(seed - $expectedSeed) == 2)
+then
+    scoreHolder.addSoftConstraintMatch(kcontext, -40000); // 2000 for one line, 40000 for two lines
+end
+
 rule "Team cannot be more than two lines from its true seed line"
 when
 	$team: Team($expectedSeed: expectedSeed)
 	$seeding: Seeding(team == $team, Math.abs(seed - $expectedSeed) > 2)
 then
     scoreHolder.addMediumConstraintMatch(kcontext, -1);
-end
-
-
-rule "Team can be moved up or down two lines from its true seed line in extraordinary circumstances"
-when
-	$team: Team($expectedSeed: expectedSeed)
-	$seeding: Seeding(team == $team, Math.abs(seed - $expectedSeed) == 2)
-then
-    scoreHolder.addSoftConstraintMatch(kcontext, -100000);
 end
 
 

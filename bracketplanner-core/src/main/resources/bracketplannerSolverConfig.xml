@@ -15,14 +15,14 @@
 
 	<!-- Optimization algorithms configuration -->
 	<constructionHeuristic>
-		<!-- WEAKEST_FIT, STRONGEST_FIT, WEAKEST_FIT_DECREASING, STRONGEST_FIT_DECREASING -->
-		<constructionHeuristicType>STRONGEST_FIT</constructionHeuristicType>
+		<!-- FIRST_FIT, FIRST_FIT_DECREASING, WEAKEST_FIT, STRONGEST_FIT, WEAKEST_FIT_DECREASING, STRONGEST_FIT_DECREASING -->
+		<constructionHeuristicType>STRONGEST_FIT_DECREASING</constructionHeuristicType>
 		<!-- <forager> <pickEarlyType>FIRST_NON_DETERIORATING_SCORE</pickEarlyType> </forager> -->
 	</constructionHeuristic>
 	<localSearch>
 		<termination>
-			<secondsSpentLimit>60</secondsSpentLimit>
-			<!-- <unimprovedStepCountLimit>60</unimprovedStepCountLimit> -->
+			<!-- <secondsSpentLimit>60</secondsSpentLimit> -->
+			<unimprovedStepCountLimit>30</unimprovedStepCountLimit>
 		</termination>
 		<unionMoveSelector>
 			<swapMoveSelector>
@@ -32,8 +32,9 @@
 				<variableNameInclude>podSite</variableNameInclude>
 			</pillarSwapMoveSelector>
 		</unionMoveSelector>
+
 		<acceptor>
-			<!-- <planningEntityTabuSize>7</planningEntityTabuSize> -->
+			<entityTabuSize>7</entityTabuSize>
 			<solutionTabuSize>987</solutionTabuSize>
 			<moveTabuSize>7</moveTabuSize>
 		</acceptor>
